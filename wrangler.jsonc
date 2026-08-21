@@ -1,0 +1,7 @@
+{
+    "name": "new-pashupati-suppliers-website",
+    "compatibility_date": "2026-08-22",
+    "assets": {
+        "directory": "./dist"
+    }
+}
