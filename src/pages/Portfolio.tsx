@@ -59,7 +59,7 @@ export const Portfolio: React.FC = () => {
         />
       </Reveal>
 
-      <section className="py-16 sm:py-20 bg-brandBg min-h-[600px]">
+      <section className="py-6 sm:py-16 lg:py-20 bg-brandBg min-h-[500px]">
         <Container>
           <Reveal variant="fade-up" delay={50}>
             <GalleryFilter

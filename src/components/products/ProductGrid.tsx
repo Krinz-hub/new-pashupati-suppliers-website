@@ -17,12 +17,12 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
   if (products.length === 0) {
     return (
       <Reveal variant="fade-up">
-        <div className="bg-white rounded-card border border-brandBorder p-12 text-center flex flex-col items-center justify-center max-w-lg mx-auto shadow-soft-sm my-12">
-          <div className="w-16 h-16 rounded-full bg-brandBg flex items-center justify-center text-brandRed mb-4 border border-brandBorder">
-            <PackageSearch className="w-8 h-8" />
+        <div className="bg-white rounded-xl border border-brandBorder p-8 sm:p-12 text-center flex flex-col items-center justify-center max-w-lg mx-auto shadow-sm my-6 sm:my-12">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-brandBg flex items-center justify-center text-brandRed mb-3 sm:mb-4 border border-brandBorder">
+            <PackageSearch className="w-6 h-6 sm:w-8 sm:h-8" />
           </div>
-          <h3 className="text-xl font-bold text-navy">No products found</h3>
-          <p className="text-sm text-brandText-muted mt-2 mb-6">
+          <h3 className="text-base sm:text-xl font-bold text-navy">No products found</h3>
+          <p className="text-xs sm:text-sm text-brandText-muted mt-1.5 sm:mt-2 mb-4 sm:mb-6">
             We couldn't find any products matching your selected category or search term.
           </p>
           {onResetFilters && (
@@ -36,12 +36,12 @@ export const ProductGrid: React.FC<ProductGridProps> = ({
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
       {products.map((product, index) => (
         <Reveal
           key={product.id}
           variant="fade-up"
-          delay={(index % 8) * 60}
+          delay={(index % 8) * 40}
         >
           <ProductCard product={product} />
         </Reveal>

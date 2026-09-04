@@ -11,8 +11,8 @@ import { cn } from '../../utils/helpers';
 export const NAV_LINKS = [
   { name: 'Home', path: '/' },
   { name: 'Products', path: '/products' },
+  { name: 'Categories', path: '/categories' },
   { name: 'Wholesale', path: '/wholesale' },
-  { name: 'About', path: '/about' },
   { name: 'Contact', path: '/contact' },
 ];
 
@@ -28,11 +28,11 @@ export const Navbar: React.FC = () => {
           'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
           isScrolled
             ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-brandBorder py-3 sm:py-3.5'
-            : 'bg-white/90 backdrop-blur-sm border-b border-brandBorder/50 py-4 sm:py-5'
+            : 'bg-white/90 backdrop-blur-sm border-b border-brandBorder/50 py-3.5 sm:py-5'
         )}
       >
         <Container>
-          <div className="flex items-center justify-between gap-6">
+          <div className="flex items-center justify-between gap-4 sm:gap-6">
             {/* Logo */}
             <div className="shrink-0">
               <Logo />
@@ -66,7 +66,7 @@ export const Navbar: React.FC = () => {
               })}
             </nav>
 
-            {/* Right Side: Single Primary CTA */}
+            {/* Right Side: Single Primary CTA on Desktop */}
             <div className="hidden md:flex items-center">
               <Button
                 to="/contact"
@@ -74,25 +74,16 @@ export const Navbar: React.FC = () => {
                 variant="primary"
                 rightIcon={<ArrowRight className="w-4 h-4" />}
               >
-                Get In Touch
+                Get a Quote
               </Button>
             </div>
 
-            {/* Mobile Menu Actions */}
-            <div className="flex items-center gap-2 md:hidden">
-              <Button
-                to="/contact"
-                size="sm"
-                variant="primary"
-                className="text-xs px-3 py-1.5 min-h-[36px]"
-              >
-                Inquire
-              </Button>
-
+            {/* Clean Mobile Menu Button (Logo on Left, Menu Button on Right) */}
+            <div className="flex items-center md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(true)}
                 className="p-2 rounded-lg text-navy hover:bg-slate-100 transition-colors focus-visible:ring-2 focus-visible:ring-brandRed"
-                aria-label="Open mobile menu"
+                aria-label="Open navigation menu"
               >
                 <Menu className="w-6 h-6" />
               </button>

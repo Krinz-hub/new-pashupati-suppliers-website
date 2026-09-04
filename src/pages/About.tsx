@@ -1,155 +1,159 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container } from '../components/common/Container';
 import { PageHero } from '../components/common/PageHero';
 import { SectionHeading } from '../components/common/SectionHeading';
-import { Button } from '../components/common/Button';
 import { ImageWithFallback } from '../components/common/ImageWithFallback';
+import { Button } from '../components/common/Button';
 import { Reveal } from '../components/common/Reveal';
 import { BUSINESS } from '../config/business';
 import { CORE_VALUES } from '../data/benefits';
 import { GALLERY_ITEMS } from '../data/gallery';
 import { setPageTitle } from '../utils/helpers';
 import {
+  ShieldCheck,
+  Award,
+  Users,
+  Building2,
+  Clock,
   Target,
   Compass,
   ArrowRight,
-  ShieldCheck,
-  Handshake,
-  Clock,
-  Users,
-  Scale,
-  Sparkles,
+  ChevronDown,
+  ChevronUp,
   LucideIcon,
-  Award,
 } from 'lucide-react';
 
 const valueIconMap: Record<string, LucideIcon> = {
   ShieldCheck,
-  Handshake,
-  Clock,
+  Award,
   Users,
-  Scale,
-  Sparkles,
+  Building2,
+  Clock,
 };
 
 export const About: React.FC = () => {
+  const [showFullStory, setShowFullStory] = useState(false);
+
   useEffect(() => {
     setPageTitle('About Us | New Pashupati Suppliers');
   }, []);
 
   return (
     <main>
-      {/* Hero */}
+      {/* Page Hero */}
       <Reveal variant="fade-in">
         <PageHero
-          eyebrow="ABOUT OUR BUSINESS"
-          title="Your Trusted Partner for Everyday Supplies"
-          description={`A dedicated wholesale and retail supplier in ${BUSINESS.location} providing dependable household, kitchenware, plastic goods, electrical items, and bulk utility essentials.`}
+          eyebrow="ABOUT OUR ENTERPRISE"
+          title="Your Trusted Daily Goods Supplier"
+          description="Serving families, local businesses, and institutions with honest pricing, extensive product choice, and dependable supply coordination in Hetauda, Nepal."
         />
       </Reveal>
 
-      {/* Our Journey / Store Video Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-brandBorder/60">
+      {/* Main Company Story Section */}
+      <section className="py-10 sm:py-20 bg-white border-b border-brandBorder/60">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-            {/* Left Column: Store Video */}
-            <div className="lg:col-span-5 relative">
-              <Reveal variant="fade-right" delay={100}>
-                <div className="relative bg-white p-2.5 rounded-2xl shadow-sm border border-brandBorder overflow-hidden">
-                  <div className="rounded-xl overflow-hidden min-h-[360px] sm:min-h-[420px] bg-slate-100 relative">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full min-h-[360px] sm:min-h-[420px] object-cover rounded-xl block"
-                      poster="/assets/placeholders/store_front.webp"
-                    >
-                      <source src="/assets/placeholders/store_front.webm" type="video/webm" />
-                      <source src="/assets/store_front.webm" type="video/webm" />
-                      <img
-                        src="/assets/placeholders/store_front.webp"
-                        alt="New Pashupati Suppliers Store Front"
-                        className="w-full h-full min-h-[360px] sm:min-h-[420px] object-cover rounded-xl block"
-                      />
-                    </video>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+            {/* Storefront Visual Staging (5 cols) */}
+            <div className="lg:col-span-5 order-2 lg:order-1">
+              <Reveal variant="fade-right" delay={50}>
+                <div className="relative rounded-xl overflow-hidden shadow-sm border border-brandBorder bg-slate-100">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden">
+                    <ImageWithFallback
+                      src="/assets/gallery/store-facade.jpg"
+                      alt="New Pashupati Suppliers Storefront"
+                      category="store"
+                      title="New Pashupati Suppliers Storefront"
+                      aspectRatio="portrait"
+                      containerClassName="w-full h-full"
+                    />
                   </div>
-
-                  <div className="absolute top-5 left-5 bg-navy text-white px-4 py-3 rounded-xl shadow-md border border-navy-light max-w-[170px]">
-                    <div className="flex items-center gap-1.5 text-brandOrange mb-0.5">
-                      <Award className="w-4 h-4" />
-                      <span className="text-lg font-extrabold">{BUSINESS.stats.experienceYears}</span>
-                    </div>
-                    <p className="text-xs font-medium text-gray-200 leading-tight">
-                      Years of Trust &amp; Service
+                  <div className="p-3 sm:p-4 bg-navy text-white text-center">
+                    <p className="text-xs sm:text-sm font-semibold">
+                      Palpasa Road, Hetauda-2, Makawanpur, Nepal
                     </p>
                   </div>
                 </div>
               </Reveal>
             </div>
 
-            {/* Story Content (7 cols) */}
-            <div className="lg:col-span-7 flex flex-col items-start text-left">
-              <Reveal variant="fade-left" delay={120}>
-                <span className="text-xs font-bold uppercase tracking-widest text-brandRed mb-3">
-                  OUR STORY
+            {/* Story Content & Key Statistics (7 cols) */}
+            <div className="lg:col-span-7 flex flex-col items-start text-left order-1 lg:order-2">
+              <Reveal variant="fade-left" delay={100}>
+                <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest text-brandRed mb-1.5 sm:mb-2.5">
+                  OUR BACKGROUND
                 </span>
 
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight leading-tight">
-                  Built on Dependability, Variety, and Fair Pricing
+                <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-navy tracking-tight leading-tight text-balance">
+                  Over a Decade of Dedicated Service in Hetauda
                 </h2>
 
-                <div className="mt-4 space-y-3.5 text-sm sm:text-base text-brandText-muted leading-relaxed">
+                {/* Mobile Concise Intro */}
+                <p className="mt-2.5 sm:mt-4 text-xs sm:text-base text-brandText-muted leading-relaxed">
+                  Established with a vision to streamline household and commercial procurement, New Pashupati Suppliers has grown into a trusted destination for daily utility products across Makawanpur.
+                </p>
+
+                {/* Desktop Story / Mobile Expandable */}
+                <div className={`${showFullStory ? 'block' : 'hidden sm:block'} mt-3 space-y-3 text-xs sm:text-base text-brandText-muted leading-relaxed`}>
                   <p>
-                    New Pashupati Suppliers was established in Hetauda with a clear mission: to provide local households, retail businesses, and institutions with direct, reliable access to everyday essentials.
+                    From humble beginnings, our store has expanded to house more than 5,000 active inventory items — ranging from heavy-gauge kitchen cookware and durable plastic containers to commercial cleaning agents and standard electrical accessories.
                   </p>
                   <p>
-                    From heavy-duty plastic storage and durable kitchen cookware to sanitation equipment and electrical hardware, our shelves are organized to help you find what you need quickly and at fair wholesale rates.
+                    We operate with transparency, competitive volume pricing, and dependable supply coordination to empower both everyday retail shoppers and wholesale business partners.
                   </p>
                 </div>
+
+                {/* Mobile Toggle Button */}
+                <button
+                  type="button"
+                  onClick={() => setShowFullStory(!showFullStory)}
+                  className="sm:hidden mt-2 inline-flex items-center gap-1 text-xs font-bold text-brandRed hover:underline"
+                >
+                  <span>{showFullStory ? 'Show Less' : 'Read Full Background'}</span>
+                  {showFullStory ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                </button>
               </Reveal>
 
-              {/* Stats Counters */}
-              <div className="mt-7 grid grid-cols-2 sm:grid-cols-4 gap-3.5 w-full">
+              {/* Statistics Grid */}
+              <div className="mt-4 sm:mt-8 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 w-full">
                 <Reveal variant="fade-up" delay={180} className="w-full">
-                  <div className="bg-brandBg p-4 rounded-xl border border-brandBorder text-center">
-                    <span className="text-2xl sm:text-3xl font-extrabold text-navy block">
+                  <div className="bg-brandBg p-3 sm:p-4 rounded-xl border border-brandBorder text-center">
+                    <span className="text-xl sm:text-3xl font-extrabold text-navy block">
                       {BUSINESS.stats.products}
                     </span>
-                    <span className="text-xs font-medium text-brandText-muted mt-1 block">
+                    <span className="text-[11px] sm:text-xs font-medium text-brandText-muted mt-0.5 sm:mt-1 block">
                       Products
                     </span>
                   </div>
                 </Reveal>
 
                 <Reveal variant="fade-up" delay={240} className="w-full">
-                  <div className="bg-brandBg p-4 rounded-xl border border-brandBorder text-center">
-                    <span className="text-2xl sm:text-3xl font-extrabold text-brandRed block">
+                  <div className="bg-brandBg p-3 sm:p-4 rounded-xl border border-brandBorder text-center">
+                    <span className="text-xl sm:text-3xl font-extrabold text-brandRed block">
                       {BUSINESS.stats.customers}
                     </span>
-                    <span className="text-xs font-medium text-brandText-muted mt-1 block">
-                      Happy Clients
+                    <span className="text-[11px] sm:text-xs font-medium text-brandText-muted mt-0.5 sm:mt-1 block">
+                      Clients
                     </span>
                   </div>
                 </Reveal>
 
                 <Reveal variant="fade-up" delay={300} className="w-full">
-                  <div className="bg-brandBg p-4 rounded-xl border border-brandBorder text-center">
-                    <span className="text-2xl sm:text-3xl font-extrabold text-navy block">
+                  <div className="bg-brandBg p-3 sm:p-4 rounded-xl border border-brandBorder text-center">
+                    <span className="text-xl sm:text-3xl font-extrabold text-navy block">
                       {BUSINESS.stats.experienceYears}
                     </span>
-                    <span className="text-xs font-medium text-brandText-muted mt-1 block">
+                    <span className="text-[11px] sm:text-xs font-medium text-brandText-muted mt-0.5 sm:mt-1 block">
                       Years Active
                     </span>
                   </div>
                 </Reveal>
 
                 <Reveal variant="fade-up" delay={360} className="w-full">
-                  <div className="bg-brandBg p-4 rounded-xl border border-brandBorder text-center">
-                    <span className="text-2xl sm:text-3xl font-extrabold text-brandRed block">
+                  <div className="bg-brandBg p-3 sm:p-4 rounded-xl border border-brandBorder text-center">
+                    <span className="text-xl sm:text-3xl font-extrabold text-brandRed block">
                       {BUSINESS.stats.partners}
                     </span>
-                    <span className="text-xs font-medium text-brandText-muted mt-1 block">
+                    <span className="text-[11px] sm:text-xs font-medium text-brandText-muted mt-0.5 sm:mt-1 block">
                       Partners
                     </span>
                   </div>
@@ -161,22 +165,22 @@ export const About: React.FC = () => {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-16 sm:py-20 bg-brandBg border-b border-brandBorder/60">
+      <section className="py-10 sm:py-20 bg-brandBg border-b border-brandBorder/60">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 max-w-4xl mx-auto">
             {/* Mission */}
             <Reveal variant="fade-up" delay={100} className="h-full">
-              <div className="bg-white p-7 sm:p-8 rounded-xl border border-brandBorder shadow-sm flex flex-col items-start h-full">
-                <div className="w-11 h-11 rounded-lg bg-brandRed/10 text-brandRed flex items-center justify-center mb-4 border border-brandRed/20">
-                  <Target className="w-6 h-6" />
+              <div className="bg-white p-5 sm:p-8 rounded-xl border border-brandBorder shadow-sm flex flex-col items-start h-full">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg bg-brandRed/10 text-brandRed flex items-center justify-center mb-3 sm:mb-4 border border-brandRed/20">
+                  <Target className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-widest text-brandRed">
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brandRed">
                   OUR MISSION
                 </span>
-                <h3 className="text-xl font-bold text-navy mt-1">
+                <h3 className="text-base sm:text-xl font-bold text-navy mt-1">
                   Dependable Supply Access
                 </h3>
-                <p className="mt-2.5 text-xs sm:text-sm text-brandText-muted leading-relaxed">
+                <p className="mt-2 text-xs sm:text-sm text-brandText-muted leading-relaxed">
                   To provide consistent access to quality everyday essentials through wide product variety, fair pricing, and dependable trade relationships.
                 </p>
               </div>
@@ -184,17 +188,17 @@ export const About: React.FC = () => {
 
             {/* Vision */}
             <Reveal variant="fade-up" delay={180} className="h-full">
-              <div className="bg-white p-7 sm:p-8 rounded-xl border border-brandBorder shadow-sm flex flex-col items-start h-full">
-                <div className="w-11 h-11 rounded-lg bg-navy/10 text-navy flex items-center justify-center mb-4 border border-navy/20">
-                  <Compass className="w-6 h-6" />
+              <div className="bg-white p-5 sm:p-8 rounded-xl border border-brandBorder shadow-sm flex flex-col items-start h-full">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg bg-navy/10 text-navy flex items-center justify-center mb-3 sm:mb-4 border border-navy/20">
+                  <Compass className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <span className="text-xs font-bold uppercase tracking-widest text-navy">
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-navy">
                   OUR VISION
                 </span>
-                <h3 className="text-xl font-bold text-navy mt-1">
+                <h3 className="text-base sm:text-xl font-bold text-navy mt-1">
                   Leading Regional Supplier
                 </h3>
-                <p className="mt-2.5 text-xs sm:text-sm text-brandText-muted leading-relaxed">
+                <p className="mt-2 text-xs sm:text-sm text-brandText-muted leading-relaxed">
                   To be the preferred supply partner across Makawanpur and surrounding regions for both retail shoppers and wholesale commercial clients.
                 </p>
               </div>
@@ -204,7 +208,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-brandBorder/60">
+      <section className="py-10 sm:py-20 lg:py-24 bg-white border-b border-brandBorder/60">
         <Container>
           <Reveal variant="fade-up">
             <SectionHeading
@@ -214,7 +218,7 @@ export const About: React.FC = () => {
             />
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             {CORE_VALUES.map((val, index) => {
               const Icon = valueIconMap[val.iconName] || ShieldCheck;
 
@@ -222,16 +226,16 @@ export const About: React.FC = () => {
                 <Reveal
                   key={val.id}
                   variant="fade-up"
-                  delay={index * 60}
+                  delay={index * 40}
                 >
-                  <div className="bg-brandBg p-6 rounded-xl border border-brandBorder hover:border-brandBorder-strong transition-all duration-200 shadow-sm h-full">
-                    <div className="w-10 h-10 rounded-lg bg-white text-brandRed flex items-center justify-center mb-3.5 border border-brandBorder">
-                      <Icon className="w-5 h-5" />
+                  <div className="bg-brandBg p-3.5 sm:p-6 rounded-xl border border-brandBorder hover:border-brandBorder-strong transition-all duration-200 shadow-sm h-full flex flex-col items-start">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white text-brandRed flex items-center justify-center mb-2.5 sm:mb-3.5 border border-brandBorder">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <h3 className="text-base font-bold text-navy">
+                    <h3 className="text-xs sm:text-base font-bold text-navy leading-snug">
                       {val.title}
                     </h3>
-                    <p className="mt-1.5 text-xs sm:text-sm text-brandText-muted leading-relaxed">
+                    <p className="hidden sm:block mt-1.5 text-xs sm:text-sm text-brandText-muted leading-relaxed">
                       {val.description}
                     </p>
                   </div>
@@ -243,7 +247,7 @@ export const About: React.FC = () => {
       </section>
 
       {/* Visual Store Tour Gallery */}
-      <section className="py-16 sm:py-20 bg-brandBg border-b border-brandBorder/60">
+      <section className="py-10 sm:py-20 bg-brandBg border-b border-brandBorder/60">
         <Container>
           <Reveal variant="fade-up">
             <SectionHeading
@@ -253,9 +257,9 @@ export const About: React.FC = () => {
             />
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-6">
             {GALLERY_ITEMS.slice(0, 6).map((item, index) => (
-              <Reveal key={item.id} variant="fade-up" delay={index * 60}>
+              <Reveal key={item.id} variant="fade-up" delay={index * 40}>
                 <div className="rounded-xl overflow-hidden bg-white border border-brandBorder shadow-sm">
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                     <ImageWithFallback
@@ -267,11 +271,11 @@ export const About: React.FC = () => {
                       containerClassName="w-full h-full"
                     />
                   </div>
-                  <div className="p-4">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-brandRed block mb-1">
+                  <div className="p-2.5 sm:p-4">
+                    <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-brandRed block mb-0.5 sm:mb-1">
                       {item.category}
                     </span>
-                    <h3 className="text-sm font-bold text-navy">
+                    <h3 className="text-xs sm:text-sm font-bold text-navy truncate">
                       {item.title}
                     </h3>
                   </div>
@@ -283,22 +287,23 @@ export const About: React.FC = () => {
       </section>
 
       {/* About Bottom CTA */}
-      <section className="py-16 sm:py-20 bg-navy-dark text-white text-center">
+      <section className="py-10 sm:py-20 bg-navy-dark text-white text-center">
         <Container>
           <Reveal variant="fade-up">
             <div className="max-w-2xl mx-auto flex flex-col items-center">
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h2 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight">
                 Have a Product or Wholesale Inquiry?
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-gray-300 leading-relaxed">
+              <p className="mt-2.5 sm:mt-3 text-xs sm:text-base text-gray-300 leading-relaxed">
                 Contact our team for price estimates, stock availability, or to arrange store pickup in Hetauda.
               </p>
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-3.5">
+              <div className="mt-5 sm:mt-7 flex flex-row items-center justify-center gap-2.5 sm:gap-3.5 w-full sm:w-auto">
                 <Button
                   to="/contact"
                   size="md"
                   variant="primary"
-                  rightIcon={<ArrowRight className="w-4 h-4" />}
+                  className="flex-1 sm:flex-initial text-xs sm:text-sm py-2.5 sm:py-3"
+                  rightIcon={<ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
                 >
                   Contact Us
                 </Button>
@@ -306,7 +311,7 @@ export const About: React.FC = () => {
                   to="/products"
                   size="md"
                   variant="outline"
-                  className="border-gray-400 text-white hover:bg-white hover:text-navy"
+                  className="flex-1 sm:flex-initial text-xs sm:text-sm py-2.5 sm:py-3 border-gray-400 text-white hover:bg-white hover:text-navy"
                 >
                   Browse Products
                 </Button>

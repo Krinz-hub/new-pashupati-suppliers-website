@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { X, Phone, Mail, ArrowRight } from 'lucide-react';
+import { X, Phone, Mail, ArrowRight, MessageSquare } from 'lucide-react';
 import { Logo } from '../common/Logo';
 import { Button } from '../common/Button';
 import { BUSINESS } from '../../config/business';
@@ -46,13 +46,13 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
       {/* Drawer */}
       <div
-        className="relative z-10 w-full max-w-xs ml-auto h-full bg-white shadow-xl flex flex-col justify-between overflow-y-auto"
+        className="relative z-10 w-full max-w-xs ml-auto h-full bg-white shadow-2xl flex flex-col justify-between overflow-y-auto"
         role="dialog"
         aria-modal="true"
         aria-label="Mobile Navigation Menu"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-brandBorder">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-brandBorder">
           <Logo variant="compact" />
           <button
             onClick={onClose}
@@ -64,7 +64,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         </div>
 
         {/* Navigation Links */}
-        <div className="px-6 py-6 flex-1">
+        <div className="px-5 py-5 flex-1">
           <nav className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <NavLink
@@ -85,11 +85,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
             ))}
           </nav>
 
-          <div className="mt-8 pt-6 border-t border-brandBorder">
+          <div className="mt-6 pt-5 border-t border-brandBorder">
             <Button
               to="/contact"
               fullWidth
-              size="lg"
+              size="md"
               variant="primary"
               onClick={onClose}
               rightIcon={<ArrowRight className="w-4 h-4" />}
@@ -99,39 +99,26 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           </div>
 
           {/* Quick Business Contact Details */}
-          <div className="mt-6 pt-6 border-t border-brandBorder space-y-3 text-xs text-brandText-muted">
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-              <a
-                href={BUSINESS.phoneLink}
-                className="flex items-center gap-2 text-navy hover:text-brandRed transition-colors font-medium"
-              >
-                <Phone className="w-4 h-4 text-brandRed shrink-0" />
-                <span>{BUSINESS.phone}</span>
-              </a>
-              {BUSINESS.phoneSecondary && (
-                <>
-                  <span className="text-gray-400">/</span>
-                  <a
-                    href={BUSINESS.phoneSecondaryLink || BUSINESS.phoneLink}
-                    className="text-navy hover:text-brandRed transition-colors font-medium"
-                  >
-                    <span>{BUSINESS.phoneSecondary}</span>
-                  </a>
-                </>
-              )}
-            </div>
+          <div className="mt-6 pt-5 border-t border-brandBorder space-y-2.5 text-xs text-brandText-muted">
+            <a
+              href={BUSINESS.phoneLink}
+              className="flex items-center gap-2.5 text-navy hover:text-brandRed transition-colors font-medium py-1"
+            >
+              <Phone className="w-4 h-4 text-brandRed shrink-0" />
+              <span>{BUSINESS.phone}</span>
+            </a>
             <a
               href={BUSINESS.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 text-navy hover:text-[#25D366] transition-colors font-medium"
+              className="flex items-center gap-2.5 text-navy hover:text-[#25D366] transition-colors font-medium py-1"
             >
-              <span className="w-4 h-4 text-[#25D366] flex items-center justify-center font-bold">💬</span>
+              <MessageSquare className="w-4 h-4 text-[#25D366] shrink-0" />
               <span>WhatsApp: {BUSINESS.whatsapp}</span>
             </a>
             <a
               href={BUSINESS.emailLink}
-              className="flex items-center gap-2.5 text-navy hover:text-brandRed transition-colors font-medium"
+              className="flex items-center gap-2.5 text-navy hover:text-brandRed transition-colors font-medium py-1"
             >
               <Mail className="w-4 h-4 text-brandRed shrink-0" />
               <span className="truncate">{BUSINESS.email}</span>

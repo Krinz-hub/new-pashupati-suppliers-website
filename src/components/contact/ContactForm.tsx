@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { ContactFormData } from '../../types';
-import { submitContactForm } from '../../services/contactService';
-import { FormStatus } from './FormStatus';
+import React, { useState } from 'react';
+import { User, Phone, Mail, MessageSquare, Send } from 'lucide-react';
 import { Button } from '../common/Button';
-import { Send, User, Phone, Mail, MessageSquare } from 'lucide-react';
+import { FormStatus } from './FormStatus';
+import { submitContactForm } from '../../services/contactService';
+import { ContactFormData } from '../../types';
 
 interface FormErrors {
   name?: string;
@@ -14,10 +13,6 @@ interface FormErrors {
 }
 
 export const ContactForm: React.FC = () => {
-  const [searchParams] = useSearchParams();
-  const productParam = searchParams.get('product');
-  const typeParam = searchParams.get('type');
-
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     phone: '',
@@ -26,59 +21,29 @@ export const ContactForm: React.FC = () => {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState<'success' | 'error' | null>(null);
-  const [statusMessage, setStatusMessage] = useState<string>('');
-
-  // Handle URL query parameters prefilling
-  useEffect(() => {
-    let initialMessage = '';
-
-    if (productParam && typeParam === 'wholesale') {
-      initialMessage = `Hello, I am interested in wholesale bulk supply for: ${productParam}. Please provide quotation and availability details.`;
-    } else if (productParam) {
-      initialMessage = `Hello, I would like to know more about: ${productParam}`;
-    } else if (typeParam === 'wholesale') {
-      initialMessage = 'Hello, I am interested in wholesale or bulk supply. Please contact me with more information.';
-    }
-
-    if (initialMessage) {
-      setFormData((prev) => ({
-        ...prev,
-        message: prev.message ? prev.message : initialMessage,
-      }));
-    }
-  }, [productParam, typeParam]);
+  const [statusMessage, setStatusMessage] = useState('');
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
 
-    // Name validation
     if (!formData.name.trim()) {
-      newErrors.name = 'Please enter your full name';
-    } else if (formData.name.trim().length < 2) {
-      newErrors.name = 'Name must be at least 2 characters';
+      newErrors.name = 'Full name is required';
     }
 
-    // Phone validation
-    const phoneTrimmed = formData.phone.trim();
-    if (!phoneTrimmed) {
-      newErrors.phone = 'Please enter your phone number';
-    } else if (phoneTrimmed.replace(/[^0-9]/g, '').length < 7) {
-      newErrors.phone = 'Please enter a valid phone number';
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone number is required';
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
-      newErrors.email = 'Please enter your email address';
-    } else if (!emailRegex.test(formData.email.trim())) {
+      newErrors.email = 'Email address is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
 
-    // Message validation
     if (!formData.message.trim()) {
-      newErrors.message = 'Please enter your message or inquiry';
+      newErrors.message = 'Please provide details for your inquiry';
     } else if (formData.message.trim().length < 5) {
       newErrors.message = 'Message must be at least 5 characters';
     }
@@ -92,7 +57,6 @@ export const ContactForm: React.FC = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error for field on change
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -118,7 +82,6 @@ export const ContactForm: React.FC = () => {
           result.message ||
             'Thank you! Your message has been sent successfully. We will get back to you soon.'
         );
-        // Clear form on success
         setFormData({
           name: '',
           phone: '',
@@ -144,28 +107,28 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-card border border-brandBorder shadow-soft-lg">
-      <div className="mb-6">
-        <h3 className="text-xl sm:text-2xl font-bold text-navy">
+    <div className="bg-white p-4 sm:p-8 lg:p-10 rounded-xl sm:rounded-card border border-brandBorder shadow-sm sm:shadow-soft-lg">
+      <div className="mb-4 sm:mb-6">
+        <h3 className="text-lg sm:text-2xl font-bold text-navy">
           Send an Inquiry
         </h3>
-        <p className="text-sm text-brandText-muted mt-1">
+        <p className="text-xs sm:text-sm text-brandText-muted mt-0.5 sm:mt-1">
           Fill in the details below and our team will get back to you promptly.
         </p>
       </div>
 
       {submissionStatus && (
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <FormStatus type={submissionStatus} message={statusMessage} />
         </div>
       )}
 
-      <form onSubmit={handleSubmit} noValidate className="space-y-5">
+      <form onSubmit={handleSubmit} noValidate className="space-y-3.5 sm:space-y-5">
         {/* Full Name */}
         <div>
           <label
             htmlFor="name"
-            className="block text-xs sm:text-sm font-bold text-navy mb-1.5"
+            className="block text-xs sm:text-sm font-bold text-navy mb-1"
           >
             Full Name <span className="text-brandRed">*</span>
           </label>
@@ -179,25 +142,25 @@ export const ContactForm: React.FC = () => {
               onChange={handleChange}
               disabled={isSubmitting}
               placeholder="e.g. Ramesh Shrestha"
-              className={`w-full pl-10 pr-4 py-2.5 rounded-btn bg-brandBg border text-sm text-navy placeholder:text-brandText-muted/70 focus:outline-none focus:ring-2 focus:ring-brandRed focus:border-transparent transition-all ${
+              className={`w-full pl-9 sm:pl-10 pr-4 py-2 sm:py-2.5 rounded-lg bg-brandBg border text-xs sm:text-sm text-navy placeholder:text-brandText-muted/70 focus:outline-none focus:ring-2 focus:ring-brandRed focus:border-transparent transition-all ${
                 errors.name ? 'border-brandError bg-brandError-light/20' : 'border-brandBorder'
               }`}
             />
           </div>
           {errors.name && (
-            <p className="text-xs text-brandError font-medium mt-1">
+            <p className="text-[11px] sm:text-xs text-brandError font-medium mt-1">
               {errors.name}
             </p>
           )}
         </div>
 
         {/* Phone Number & Email Address (2 columns) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-5">
           {/* Phone */}
           <div>
             <label
               htmlFor="phone"
-              className="block text-xs sm:text-sm font-bold text-navy mb-1.5"
+              className="block text-xs sm:text-sm font-bold text-navy mb-1"
             >
               Phone Number <span className="text-brandRed">*</span>
             </label>
@@ -210,14 +173,14 @@ export const ContactForm: React.FC = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 disabled={isSubmitting}
-                placeholder="e.g. +977 9855070435 / 9855070435"
-                className={`w-full pl-10 pr-4 py-2.5 rounded-btn bg-brandBg border text-sm text-navy placeholder:text-brandText-muted/70 focus:outline-none focus:ring-2 focus:ring-brandRed focus:border-transparent transition-all ${
+                placeholder="e.g. 9855070435"
+                className={`w-full pl-9 sm:pl-10 pr-4 py-2 sm:py-2.5 rounded-lg bg-brandBg border text-xs sm:text-sm text-navy placeholder:text-brandText-muted/70 focus:outline-none focus:ring-2 focus:ring-brandRed focus:border-transparent transition-all ${
                   errors.phone ? 'border-brandError bg-brandError-light/20' : 'border-brandBorder'
                 }`}
               />
             </div>
             {errors.phone && (
-              <p className="text-xs text-brandError font-medium mt-1">
+              <p className="text-[11px] sm:text-xs text-brandError font-medium mt-1">
                 {errors.phone}
               </p>
             )}
@@ -227,7 +190,7 @@ export const ContactForm: React.FC = () => {
           <div>
             <label
               htmlFor="email"
-              className="block text-xs sm:text-sm font-bold text-navy mb-1.5"
+              className="block text-xs sm:text-sm font-bold text-navy mb-1"
             >
               Email Address <span className="text-brandRed">*</span>
             </label>
@@ -241,13 +204,13 @@ export const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 disabled={isSubmitting}
                 placeholder="e.g. ramesh@example.com"
-                className={`w-full pl-10 pr-4 py-2.5 rounded-btn bg-brandBg border text-sm text-navy placeholder:text-brandText-muted/70 focus:outline-none focus:ring-2 focus:ring-brandRed focus:border-transparent transition-all ${
+                className={`w-full pl-9 sm:pl-10 pr-4 py-2 sm:py-2.5 rounded-lg bg-brandBg border text-xs sm:text-sm text-navy placeholder:text-brandText-muted/70 focus:outline-none focus:ring-2 focus:ring-brandRed focus:border-transparent transition-all ${
                   errors.email ? 'border-brandError bg-brandError-light/20' : 'border-brandBorder'
                 }`}
               />
             </div>
             {errors.email && (
-              <p className="text-xs text-brandError font-medium mt-1">
+              <p className="text-[11px] sm:text-xs text-brandError font-medium mt-1">
                 {errors.email}
               </p>
             )}
@@ -258,48 +221,49 @@ export const ContactForm: React.FC = () => {
         <div>
           <label
             htmlFor="message"
-            className="block text-xs sm:text-sm font-bold text-navy mb-1.5"
+            className="block text-xs sm:text-sm font-bold text-navy mb-1"
           >
             Message or Inquiry Details <span className="text-brandRed">*</span>
           </label>
           <div className="relative">
-            <MessageSquare className="absolute left-3.5 top-3 w-4 h-4 text-brandText-muted pointer-events-none" />
+            <MessageSquare className="absolute left-3.5 top-2.5 sm:top-3 w-4 h-4 text-brandText-muted pointer-events-none" />
             <textarea
               id="message"
               name="message"
-              rows={5}
+              rows={4}
               value={formData.message}
               onChange={handleChange}
               disabled={isSubmitting}
               placeholder="Tell us what products, quantities, or assistance you need..."
-              className={`w-full pl-10 pr-4 py-2.5 rounded-btn bg-brandBg border text-sm text-navy placeholder:text-brandText-muted/70 focus:outline-none focus:ring-2 focus:ring-brandRed focus:border-transparent transition-all resize-y ${
+              className={`w-full pl-9 sm:pl-10 pr-4 py-2 sm:py-2.5 rounded-lg bg-brandBg border text-xs sm:text-sm text-navy placeholder:text-brandText-muted/70 focus:outline-none focus:ring-2 focus:ring-brandRed focus:border-transparent transition-all resize-y ${
                 errors.message ? 'border-brandError bg-brandError-light/20' : 'border-brandBorder'
               }`}
             />
           </div>
           {errors.message && (
-            <p className="text-xs text-brandError font-medium mt-1">
+            <p className="text-[11px] sm:text-xs text-brandError font-medium mt-1">
               {errors.message}
             </p>
           )}
         </div>
 
         {/* Submit CTA */}
-        <div className="pt-2">
+        <div className="pt-1 sm:pt-2">
           <Button
             type="submit"
-            size="lg"
+            size="md"
             variant="primary"
             fullWidth
             isLoading={isSubmitting}
             disabled={isSubmitting}
-            rightIcon={!isSubmitting ? <Send className="w-4 h-4" /> : undefined}
+            className="text-xs sm:text-sm py-2.5 sm:py-3"
+            rightIcon={!isSubmitting ? <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : undefined}
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </Button>
         </div>
 
-        <p className="text-center text-xs text-brandText-muted">
+        <p className="text-center text-[11px] sm:text-xs text-brandText-muted">
           Your information is handled securely and sent directly to New Pashupati Suppliers.
         </p>
       </form>

@@ -31,11 +31,11 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   };
 
   return (
-    <div className={cn('flex flex-col max-w-3xl mb-10 sm:mb-12', alignStyles[align], className)}>
+    <div className={cn('flex flex-col max-w-3xl mb-6 sm:mb-10 lg:mb-12', alignStyles[align], className)}>
       {eyebrow && (
         <span
           className={cn(
-            'text-xs font-bold uppercase tracking-widest mb-2.5 block',
+            'text-[11px] sm:text-xs font-bold uppercase tracking-wider sm:tracking-widest mb-1.5 sm:mb-2.5 block',
             isDark ? 'text-brandOrange' : 'text-brandRed'
           )}
         >
@@ -47,8 +47,8 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         className={cn(
           'font-extrabold tracking-tight text-balance leading-tight',
           TitleTag === 'h1'
-            ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl'
-            : 'text-2xl sm:text-3xl lg:text-4xl',
+            ? 'text-2xl sm:text-4xl md:text-5xl lg:text-6xl'
+            : 'text-xl sm:text-3xl lg:text-4xl',
           isDark ? 'text-white' : 'text-navy'
         )}
       >
@@ -58,7 +58,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
       {description && (
         <p
           className={cn(
-            'mt-3 text-sm sm:text-base leading-relaxed text-balance',
+            'mt-2 sm:mt-3 text-xs sm:text-base leading-relaxed text-balance',
             isDark ? 'text-gray-300' : 'text-brandText-muted'
           )}
         >
@@ -66,7 +66,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         </p>
       )}
 
-      {children && <div className="mt-6">{children}</div>}
+      {children && <div className="mt-4 sm:mt-6">{children}</div>}
     </div>
   );
 };

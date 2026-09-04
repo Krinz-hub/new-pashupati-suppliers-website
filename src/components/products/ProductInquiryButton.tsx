@@ -11,7 +11,7 @@ interface ProductInquiryButtonProps {
 export const ProductInquiryButton: React.FC<ProductInquiryButtonProps> = ({
   productName,
   className,
-  size = 'md',
+  size = 'sm',
 }) => {
   const inquiryUrl = `/contact?product=${encodeURIComponent(productName)}`;
 
@@ -21,10 +21,11 @@ export const ProductInquiryButton: React.FC<ProductInquiryButtonProps> = ({
       size={size}
       variant="primary"
       fullWidth
-      leftIcon={<MessageSquare className="w-4 h-4" />}
-      className={className}
+      leftIcon={<MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
+      className={`text-xs sm:text-sm py-2 sm:py-2.5 ${className || ''}`}
     >
-      Inquire About This Product
+      <span className="sm:hidden">Inquire</span>
+      <span className="hidden sm:inline">Inquire About Product</span>
     </Button>
   );
 };

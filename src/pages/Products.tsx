@@ -5,7 +5,8 @@ import { PageHero } from '../components/common/PageHero';
 import { CategoryFilter } from '../components/products/CategoryFilter';
 import { ProductGrid } from '../components/products/ProductGrid';
 import { Reveal } from '../components/common/Reveal';
-import { PRODUCTS } from '../data/products';
+import { useProducts } from '../hooks/useProducts';
+import { PRODUCTS as DEFAULT_PRODUCTS } from '../data/products';
 import { setPageTitle } from '../utils/helpers';
 
 export const Products: React.FC = () => {
@@ -14,6 +15,12 @@ export const Products: React.FC = () => {
 
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam);
   const [searchQuery, setSearchQuery] = useState<string>('');
+
+  // Fetch dynamic products from CMS with published filter
+  const { products: dynamicProducts, loading } = useProducts({ status: 'published' });
+
+  // Use dynamic products once loaded from CMS; fallback to default only during first initial render
+  const productList = !loading || dynamicProducts.length > 0 ? dynamicProducts : DEFAULT_PRODUCTS;
 
   useEffect(() => {
     setPageTitle('Our Products | New Pashupati Suppliers');
@@ -45,10 +52,11 @@ export const Products: React.FC = () => {
 
   // Filter products by category and search query
   const filteredProducts = useMemo(() => {
-    return PRODUCTS.filter((product) => {
+    return productList.filter((product) => {
       const matchesCategory =
         selectedCategory === 'all' ||
-        product.category.toLowerCase() === selectedCategory.toLowerCase();
+        product.category.toLowerCase() === selectedCategory.toLowerCase() ||
+        (product as any).categoryId === selectedCategory;
 
       const matchesSearch =
         !searchQuery.trim() ||
@@ -58,7 +66,7 @@ export const Products: React.FC = () => {
 
       return matchesCategory && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [productList, selectedCategory, searchQuery]);
 
   return (
     <main>
@@ -66,11 +74,11 @@ export const Products: React.FC = () => {
         <PageHero
           eyebrow="PRODUCT SHOWCASE &amp; INVENTORY"
           title="Explore Our Products"
-          description="Discover a wide range of everyday utility items, cookware, plastics, cleaning essentials, and electrical supplies available for retail and bulk purchase."
+          description="Discover everyday utility items, cookware, plastics, cleaning essentials, and electrical supplies available for retail and bulk purchase."
         />
       </Reveal>
 
-      <section className="py-16 sm:py-20 bg-brandBg min-h-[600px]">
+      <section className="py-6 sm:py-16 lg:py-20 bg-brandBg min-h-[500px]">
         <Container>
           <Reveal variant="fade-up" delay={50}>
             <CategoryFilter
