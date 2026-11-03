@@ -12,9 +12,9 @@ export const PRODUCTS: Product[] = [
     "description": "Apron supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Apron - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p1-apron.svg",
+    "image": "/assets/products/kitchen/p1-apron.jpg",
     "images": [
-      "/assets/products/kitchen/p1-apron.svg"
+      "/assets/products/kitchen/p1-apron.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -33,9 +33,9 @@ export const PRODUCTS: Product[] = [
     "description": "Baby pot supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Baby pot - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p2-baby-pot.svg",
+    "image": "/assets/products/kitchen/p2-baby-pot.jpg",
     "images": [
-      "/assets/products/kitchen/p2-baby-pot.svg"
+      "/assets/products/kitchen/p2-baby-pot.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -54,9 +54,9 @@ export const PRODUCTS: Product[] = [
     "description": "Baltra Infrared supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Baltra Infrared - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/electrical/p3-baltra-infrared.svg",
+    "image": "/assets/products/electrical/p3-baltra-infrared.jpg",
     "images": [
-      "/assets/products/electrical/p3-baltra-infrared.svg"
+      "/assets/products/electrical/p3-baltra-infrared.jpg"
     ],
     "featured": true,
     "popular": true,
@@ -75,9 +75,9 @@ export const PRODUCTS: Product[] = [
     "description": "Basin supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Basin - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p4-basin.svg",
+    "image": "/assets/products/household/p4-basin.jpg",
     "images": [
-      "/assets/products/household/p4-basin.svg"
+      "/assets/products/household/p4-basin.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -96,9 +96,9 @@ export const PRODUCTS: Product[] = [
     "description": "Belna supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Belna - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p5-belna.svg",
+    "image": "/assets/products/kitchen/p5-belna.jpg",
     "images": [
-      "/assets/products/kitchen/p5-belna.svg"
+      "/assets/products/kitchen/p5-belna.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -117,9 +117,9 @@ export const PRODUCTS: Product[] = [
     "description": "Better Induction supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Better Induction - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p6-better-induction.svg",
+    "image": "/assets/products/kitchen/p6-better-induction.jpg",
     "images": [
-      "/assets/products/kitchen/p6-better-induction.svg"
+      "/assets/products/kitchen/p6-better-induction.jpg"
     ],
     "featured": true,
     "popular": true,
@@ -138,9 +138,9 @@ export const PRODUCTS: Product[] = [
     "description": "Bowl supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Bowl - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p7-bowl.svg",
+    "image": "/assets/products/kitchen/p7-bowl.png",
     "images": [
-      "/assets/products/kitchen/p7-bowl.svg"
+      "/assets/products/kitchen/p7-bowl.png"
     ],
     "featured": true,
     "popular": false,
@@ -159,9 +159,9 @@ export const PRODUCTS: Product[] = [
     "description": "Broom supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Broom - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/cleaning/p8-broom.svg",
+    "image": "/assets/products/cleaning/p8-broom.jpg",
     "images": [
-      "/assets/products/cleaning/p8-broom.svg"
+      "/assets/products/cleaning/p8-broom.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -180,9 +180,9 @@ export const PRODUCTS: Product[] = [
     "description": "Bucket supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Bucket - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/plastic/p9-bucket.svg",
+    "image": "/assets/products/plastic/p9-bucket.jpg",
     "images": [
-      "/assets/products/plastic/p9-bucket.svg"
+      "/assets/products/plastic/p9-bucket.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -201,9 +201,9 @@ export const PRODUCTS: Product[] = [
     "description": "Chair supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Chair - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/plastic/p10-chair.svg",
+    "image": "/assets/products/plastic/p10-chair.jpg",
     "images": [
-      "/assets/products/plastic/p10-chair.svg"
+      "/assets/products/plastic/p10-chair.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -222,9 +222,9 @@ export const PRODUCTS: Product[] = [
     "description": "Chopping board supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Chopping board - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p11-chopping-board.svg",
+    "image": "/assets/products/kitchen/p11-chopping-board.jpg",
     "images": [
-      "/assets/products/kitchen/p11-chopping-board.svg"
+      "/assets/products/kitchen/p11-chopping-board.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -243,9 +243,9 @@ export const PRODUCTS: Product[] = [
     "description": "Clip supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Clip - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/plastic/p12-clip.svg",
+    "image": "/assets/products/plastic/p12-clip.jpg",
     "images": [
-      "/assets/products/plastic/p12-clip.svg"
+      "/assets/products/plastic/p12-clip.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -264,9 +264,9 @@ export const PRODUCTS: Product[] = [
     "description": "Colin supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Colin - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/cleaning/p13-colin.svg",
+    "image": "/assets/products/cleaning/p13-colin.jpg",
     "images": [
-      "/assets/products/cleaning/p13-colin.svg"
+      "/assets/products/cleaning/p13-colin.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -285,9 +285,9 @@ export const PRODUCTS: Product[] = [
     "description": "Cooker 1L (Delight) supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Cooker 1L (Delight) - Available at New Pashupati Suppliers",
     "brand": "Delight",
-    "image": "/assets/products/kitchen/p14-cooker-1l-delight.svg",
+    "image": "/assets/products/kitchen/p14-cooker-1l-delight.jpg",
     "images": [
-      "/assets/products/kitchen/p14-cooker-1l-delight.svg"
+      "/assets/products/kitchen/p14-cooker-1l-delight.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -306,9 +306,9 @@ export const PRODUCTS: Product[] = [
     "description": "Cooker 1.5L (Delight) supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Cooker 1.5L (Delight) - Available at New Pashupati Suppliers",
     "brand": "Delight",
-    "image": "/assets/products/kitchen/p15-cooker-15l-delight.svg",
+    "image": "/assets/products/kitchen/p15-cooker-15l-delight.jpg",
     "images": [
-      "/assets/products/kitchen/p15-cooker-15l-delight.svg"
+      "/assets/products/kitchen/p15-cooker-15l-delight.jpg"
     ],
     "featured": true,
     "popular": true,
@@ -327,9 +327,9 @@ export const PRODUCTS: Product[] = [
     "description": "Cooker 2L (Delight) supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Cooker 2L (Delight) - Available at New Pashupati Suppliers",
     "brand": "Delight",
-    "image": "/assets/products/kitchen/p16-cooker-2l-delight.svg",
+    "image": "/assets/products/kitchen/p16-cooker-2l-delight.jpg",
     "images": [
-      "/assets/products/kitchen/p16-cooker-2l-delight.svg"
+      "/assets/products/kitchen/p16-cooker-2l-delight.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -348,9 +348,9 @@ export const PRODUCTS: Product[] = [
     "description": "Cooker 3L (Nova) supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Cooker 3L (Nova) - Available at New Pashupati Suppliers",
     "brand": "Nova",
-    "image": "/assets/products/kitchen/p17-cooker-3l-nova.svg",
+    "image": "/assets/products/kitchen/p17-cooker-3l-nova.jpg",
     "images": [
-      "/assets/products/kitchen/p17-cooker-3l-nova.svg"
+      "/assets/products/kitchen/p17-cooker-3l-nova.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -369,9 +369,9 @@ export const PRODUCTS: Product[] = [
     "description": "Cooker 5L (Delight / Nova) supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Cooker 5L (Delight / Nova) - Available at New Pashupati Suppliers",
     "brand": "Delight / Nova",
-    "image": "/assets/products/kitchen/p18-cooker-5l-delight-nova.svg",
+    "image": "/assets/products/kitchen/p18-cooker-5l-delight-nova.jpg",
     "images": [
-      "/assets/products/kitchen/p18-cooker-5l-delight-nova.svg"
+      "/assets/products/kitchen/p18-cooker-5l-delight-nova.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -390,9 +390,9 @@ export const PRODUCTS: Product[] = [
     "description": "Deli glass mocha cup supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Deli glass mocha cup - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p19-deli-glass-mocha-cup.svg",
+    "image": "/assets/products/kitchen/p19-deli-glass-mocha-cup.png",
     "images": [
-      "/assets/products/kitchen/p19-deli-glass-mocha-cup.svg"
+      "/assets/products/kitchen/p19-deli-glass-mocha-cup.png"
     ],
     "featured": false,
     "popular": false,
@@ -411,9 +411,9 @@ export const PRODUCTS: Product[] = [
     "description": "Deli glassware supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Deli glassware - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p20-deli-glassware.svg",
+    "image": "/assets/products/kitchen/p20-deli-glassware.png",
     "images": [
-      "/assets/products/kitchen/p20-deli-glassware.svg"
+      "/assets/products/kitchen/p20-deli-glassware.png"
     ],
     "featured": true,
     "popular": false,
@@ -432,9 +432,9 @@ export const PRODUCTS: Product[] = [
     "description": "Detol supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Detol - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/cleaning/p21-detol.svg",
+    "image": "/assets/products/cleaning/p21-detol.png",
     "images": [
-      "/assets/products/cleaning/p21-detol.svg"
+      "/assets/products/cleaning/p21-detol.png"
     ],
     "featured": false,
     "popular": true,
@@ -453,9 +453,9 @@ export const PRODUCTS: Product[] = [
     "description": "Dimon glass fancy supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Dimon glass fancy - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/electrical/p22-dimon-glass-fancy.svg",
+    "image": "/assets/products/electrical/p22-dimon-glass-fancy.png",
     "images": [
-      "/assets/products/electrical/p22-dimon-glass-fancy.svg"
+      "/assets/products/electrical/p22-dimon-glass-fancy.png"
     ],
     "featured": false,
     "popular": false,
@@ -474,9 +474,9 @@ export const PRODUCTS: Product[] = [
     "description": "Drinker chicken supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Drinker chicken - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/general/p23-drinker-chicken.svg",
+    "image": "/assets/products/general/p23-drinker-chicken.jpg",
     "images": [
-      "/assets/products/general/p23-drinker-chicken.svg"
+      "/assets/products/general/p23-drinker-chicken.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -495,9 +495,9 @@ export const PRODUCTS: Product[] = [
     "description": "Diuya cup supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Diuya cup - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p24-diuya-cup.svg",
+    "image": "/assets/products/kitchen/p24-diuya-cup.jpg",
     "images": [
-      "/assets/products/kitchen/p24-diuya-cup.svg"
+      "/assets/products/kitchen/p24-diuya-cup.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -516,9 +516,9 @@ export const PRODUCTS: Product[] = [
     "description": "Electromax thermos 1800ml supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Electromax thermos 1800ml - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/electrical/p25-electromax-thermos-1800ml.svg",
+    "image": "/assets/products/electrical/p25-electromax-thermos-1800ml.png",
     "images": [
-      "/assets/products/electrical/p25-electromax-thermos-1800ml.svg"
+      "/assets/products/electrical/p25-electromax-thermos-1800ml.png"
     ],
     "featured": true,
     "popular": false,
@@ -537,9 +537,9 @@ export const PRODUCTS: Product[] = [
     "description": "Fan supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Fan - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/electrical/p26-fan.svg",
+    "image": "/assets/products/electrical/p26-fan.jpg",
     "images": [
-      "/assets/products/electrical/p26-fan.svg"
+      "/assets/products/electrical/p26-fan.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -558,9 +558,9 @@ export const PRODUCTS: Product[] = [
     "description": "Feeder chicken supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Feeder chicken - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/general/p27-feeder-chicken.svg",
+    "image": "/assets/products/general/p27-feeder-chicken.jpg",
     "images": [
-      "/assets/products/general/p27-feeder-chicken.svg"
+      "/assets/products/general/p27-feeder-chicken.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -579,9 +579,9 @@ export const PRODUCTS: Product[] = [
     "description": "Filter 18L supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Filter 18L - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/storage/p28-filter-18l.svg",
+    "image": "/assets/products/storage/p28-filter-18l.png",
     "images": [
-      "/assets/products/storage/p28-filter-18l.svg"
+      "/assets/products/storage/p28-filter-18l.png"
     ],
     "featured": false,
     "popular": false,
@@ -600,9 +600,9 @@ export const PRODUCTS: Product[] = [
     "description": "Filter 21L supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Filter 21L - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/storage/p29-filter-21l.svg",
+    "image": "/assets/products/storage/p29-filter-21l.png",
     "images": [
-      "/assets/products/storage/p29-filter-21l.svg"
+      "/assets/products/storage/p29-filter-21l.png"
     ],
     "featured": false,
     "popular": false,
@@ -621,9 +621,9 @@ export const PRODUCTS: Product[] = [
     "description": "Flower pot Round / Circle supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Flower pot Round / Circle - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p30-flower-pot-round-circle.svg",
+    "image": "/assets/products/kitchen/p30-flower-pot-round-circle.png",
     "images": [
-      "/assets/products/kitchen/p30-flower-pot-round-circle.svg"
+      "/assets/products/kitchen/p30-flower-pot-round-circle.png"
     ],
     "featured": true,
     "popular": true,
@@ -642,9 +642,9 @@ export const PRODUCTS: Product[] = [
     "description": "Foodpacker supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Foodpacker - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/storage/p31-foodpacker.svg",
+    "image": "/assets/products/storage/p31-foodpacker.jpg",
     "images": [
-      "/assets/products/storage/p31-foodpacker.svg"
+      "/assets/products/storage/p31-foodpacker.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -663,9 +663,9 @@ export const PRODUCTS: Product[] = [
     "description": "Fork supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Fork - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p32-fork.svg",
+    "image": "/assets/products/kitchen/p32-fork.jpg",
     "images": [
-      "/assets/products/kitchen/p32-fork.svg"
+      "/assets/products/kitchen/p32-fork.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -684,9 +684,9 @@ export const PRODUCTS: Product[] = [
     "description": "Gas Hicto Flame supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Gas Hicto Flame - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/electrical/p33-gas-hicto-flame.svg",
+    "image": "/assets/products/electrical/p33-gas-hicto-flame.jpg",
     "images": [
-      "/assets/products/electrical/p33-gas-hicto-flame.svg"
+      "/assets/products/electrical/p33-gas-hicto-flame.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -705,9 +705,9 @@ export const PRODUCTS: Product[] = [
     "description": "Gas Suryametal supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Gas Suryametal - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/electrical/p34-gas-suryametal.svg",
+    "image": "/assets/products/electrical/p34-gas-suryametal.jpg",
     "images": [
-      "/assets/products/electrical/p34-gas-suryametal.svg"
+      "/assets/products/electrical/p34-gas-suryametal.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -726,9 +726,9 @@ export const PRODUCTS: Product[] = [
     "description": "Good night supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Good night - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/general/p35-good-night.svg",
+    "image": "/assets/products/general/p35-good-night.jpg",
     "images": [
-      "/assets/products/general/p35-good-night.svg"
+      "/assets/products/general/p35-good-night.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -747,9 +747,9 @@ export const PRODUCTS: Product[] = [
     "description": "Heater supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Heater - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/electrical/p36-heater.svg",
+    "image": "/assets/products/electrical/p36-heater.jpg",
     "images": [
-      "/assets/products/electrical/p36-heater.svg"
+      "/assets/products/electrical/p36-heater.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -768,9 +768,9 @@ export const PRODUCTS: Product[] = [
     "description": "Jasmine cup Baltra supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Jasmine cup Baltra - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p37-jasmine-cup-baltra.svg",
+    "image": "/assets/products/kitchen/p37-jasmine-cup-baltra.jpg",
     "images": [
-      "/assets/products/kitchen/p37-jasmine-cup-baltra.svg"
+      "/assets/products/kitchen/p37-jasmine-cup-baltra.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -789,9 +789,9 @@ export const PRODUCTS: Product[] = [
     "description": "Jug supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Jug - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/storage/p38-jug.svg",
+    "image": "/assets/products/storage/p38-jug.png",
     "images": [
-      "/assets/products/storage/p38-jug.svg"
+      "/assets/products/storage/p38-jug.png"
     ],
     "featured": false,
     "popular": false,
@@ -810,9 +810,9 @@ export const PRODUCTS: Product[] = [
     "description": "Kalahit supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Kalahit - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/cleaning/p39-kalahit.svg",
+    "image": "/assets/products/cleaning/p39-kalahit.jpg",
     "images": [
-      "/assets/products/cleaning/p39-kalahit.svg"
+      "/assets/products/cleaning/p39-kalahit.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -831,9 +831,9 @@ export const PRODUCTS: Product[] = [
     "description": "Karbin cup luxury supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Karbin cup luxury - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p40-karbin-cup-luxury.svg",
+    "image": "/assets/products/kitchen/p40-karbin-cup-luxury.jpg",
     "images": [
-      "/assets/products/kitchen/p40-karbin-cup-luxury.svg"
+      "/assets/products/kitchen/p40-karbin-cup-luxury.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -852,9 +852,9 @@ export const PRODUCTS: Product[] = [
     "description": "Kitchen jell Detol supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Kitchen jell Detol - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/cleaning/p41-kitchen-jell-detol.svg",
+    "image": "/assets/products/cleaning/p41-kitchen-jell-detol.jpg",
     "images": [
-      "/assets/products/cleaning/p41-kitchen-jell-detol.svg"
+      "/assets/products/cleaning/p41-kitchen-jell-detol.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -873,9 +873,9 @@ export const PRODUCTS: Product[] = [
     "description": "Knife supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Knife - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p42-knife.svg",
+    "image": "/assets/products/kitchen/p42-knife.png",
     "images": [
-      "/assets/products/kitchen/p42-knife.svg"
+      "/assets/products/kitchen/p42-knife.png"
     ],
     "featured": false,
     "popular": true,
@@ -915,9 +915,9 @@ export const PRODUCTS: Product[] = [
     "description": "Lizol supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Lizol - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/cleaning/p44-lizol.svg",
+    "image": "/assets/products/cleaning/p44-lizol.jpg",
     "images": [
-      "/assets/products/cleaning/p44-lizol.svg"
+      "/assets/products/cleaning/p44-lizol.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -936,9 +936,9 @@ export const PRODUCTS: Product[] = [
     "description": "Lock supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Lock - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p45-lock.svg",
+    "image": "/assets/products/household/p45-lock.jpg",
     "images": [
-      "/assets/products/household/p45-lock.svg"
+      "/assets/products/household/p45-lock.jpg"
     ],
     "featured": true,
     "popular": true,
@@ -957,9 +957,9 @@ export const PRODUCTS: Product[] = [
     "description": "Lunch box 600ml supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Lunch box 600ml - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p46-lunch-box-600ml.svg",
+    "image": "/assets/products/kitchen/p46-lunch-box-600ml.png",
     "images": [
-      "/assets/products/kitchen/p46-lunch-box-600ml.svg"
+      "/assets/products/kitchen/p46-lunch-box-600ml.png"
     ],
     "featured": false,
     "popular": false,
@@ -978,9 +978,9 @@ export const PRODUCTS: Product[] = [
     "description": "Madhu hot pot 1500ml supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Madhu hot pot 1500ml - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p47-madhu-hot-pot-1500ml.svg",
+    "image": "/assets/products/kitchen/p47-madhu-hot-pot-1500ml.jpg",
     "images": [
-      "/assets/products/kitchen/p47-madhu-hot-pot-1500ml.svg"
+      "/assets/products/kitchen/p47-madhu-hot-pot-1500ml.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -999,9 +999,9 @@ export const PRODUCTS: Product[] = [
     "description": "Metal box 20 inch supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Metal box 20 inch - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p48-metal-box-20-inch.svg",
+    "image": "/assets/products/household/p48-metal-box-20-inch.jpg",
     "images": [
-      "/assets/products/household/p48-metal-box-20-inch.svg"
+      "/assets/products/household/p48-metal-box-20-inch.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -1020,9 +1020,9 @@ export const PRODUCTS: Product[] = [
     "description": "Metal box 24 inch supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Metal box 24 inch - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p49-metal-box-24-inch.svg",
+    "image": "/assets/products/household/p49-metal-box-24-inch.jpg",
     "images": [
-      "/assets/products/household/p49-metal-box-24-inch.svg"
+      "/assets/products/household/p49-metal-box-24-inch.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1041,9 +1041,9 @@ export const PRODUCTS: Product[] = [
     "description": "Metal box 26 inch supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Metal box 26 inch - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p50-metal-box-26-inch.svg",
+    "image": "/assets/products/household/p50-metal-box-26-inch.jpg",
     "images": [
-      "/assets/products/household/p50-metal-box-26-inch.svg"
+      "/assets/products/household/p50-metal-box-26-inch.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -1062,9 +1062,9 @@ export const PRODUCTS: Product[] = [
     "description": "Metal box 28 inch supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Metal box 28 inch - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p51-metal-box-28-inch.svg",
+    "image": "/assets/products/household/p51-metal-box-28-inch.jpg",
     "images": [
-      "/assets/products/household/p51-metal-box-28-inch.svg"
+      "/assets/products/household/p51-metal-box-28-inch.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -1083,9 +1083,9 @@ export const PRODUCTS: Product[] = [
     "description": "Metal box 30 inch supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Metal box 30 inch - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p52-metal-box-30-inch.svg",
+    "image": "/assets/products/household/p52-metal-box-30-inch.jpg",
     "images": [
-      "/assets/products/household/p52-metal-box-30-inch.svg"
+      "/assets/products/household/p52-metal-box-30-inch.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1104,9 +1104,9 @@ export const PRODUCTS: Product[] = [
     "description": "Metal box 32 inch supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Metal box 32 inch - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p53-metal-box-32-inch.svg",
+    "image": "/assets/products/household/p53-metal-box-32-inch.jpg",
     "images": [
-      "/assets/products/household/p53-metal-box-32-inch.svg"
+      "/assets/products/household/p53-metal-box-32-inch.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1125,9 +1125,9 @@ export const PRODUCTS: Product[] = [
     "description": "Metal box 36 inch supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Metal box 36 inch - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p54-metal-box-36-inch.svg",
+    "image": "/assets/products/household/p54-metal-box-36-inch.jpg",
     "images": [
-      "/assets/products/household/p54-metal-box-36-inch.svg"
+      "/assets/products/household/p54-metal-box-36-inch.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -1146,9 +1146,9 @@ export const PRODUCTS: Product[] = [
     "description": "Metal box 4ft supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Metal box 4ft - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p55-metal-box-4ft.svg",
+    "image": "/assets/products/household/p55-metal-box-4ft.jpg",
     "images": [
-      "/assets/products/household/p55-metal-box-4ft.svg"
+      "/assets/products/household/p55-metal-box-4ft.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -1167,9 +1167,9 @@ export const PRODUCTS: Product[] = [
     "description": "Milda cup supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Milda cup - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p56-milda-cup.svg",
+    "image": "/assets/products/kitchen/p56-milda-cup.jpg",
     "images": [
-      "/assets/products/kitchen/p56-milda-cup.svg"
+      "/assets/products/kitchen/p56-milda-cup.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1188,9 +1188,9 @@ export const PRODUCTS: Product[] = [
     "description": "Mixer supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Mixer - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p57-mixer.svg",
+    "image": "/assets/products/kitchen/p57-mixer.jpg",
     "images": [
-      "/assets/products/kitchen/p57-mixer.svg"
+      "/assets/products/kitchen/p57-mixer.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -1209,9 +1209,9 @@ export const PRODUCTS: Product[] = [
     "description": "Momo container supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Momo container - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p58-momo-container.svg",
+    "image": "/assets/products/kitchen/p58-momo-container.jpg",
     "images": [
-      "/assets/products/kitchen/p58-momo-container.svg"
+      "/assets/products/kitchen/p58-momo-container.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1230,9 +1230,9 @@ export const PRODUCTS: Product[] = [
     "description": "Moph plastic plate supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Moph plastic plate - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p59-moph-plastic-plate.svg",
+    "image": "/assets/products/kitchen/p59-moph-plastic-plate.jpg",
     "images": [
-      "/assets/products/kitchen/p59-moph-plastic-plate.svg"
+      "/assets/products/kitchen/p59-moph-plastic-plate.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1272,9 +1272,9 @@ export const PRODUCTS: Product[] = [
     "description": "Pan supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Pan - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p61-pan.svg",
+    "image": "/assets/products/kitchen/p61-pan.png",
     "images": [
-      "/assets/products/kitchen/p61-pan.svg"
+      "/assets/products/kitchen/p61-pan.png"
     ],
     "featured": false,
     "popular": false,
@@ -1314,9 +1314,9 @@ export const PRODUCTS: Product[] = [
     "description": "Pipe plastic supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Pipe plastic - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/plastic/p63-pipe-plastic.svg",
+    "image": "/assets/products/plastic/p63-pipe-plastic.png",
     "images": [
-      "/assets/products/plastic/p63-pipe-plastic.svg"
+      "/assets/products/plastic/p63-pipe-plastic.png"
     ],
     "featured": false,
     "popular": true,
@@ -1335,9 +1335,9 @@ export const PRODUCTS: Product[] = [
     "description": "Plastic bottle supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Plastic bottle - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/plastic/p64-plastic-bottle.svg",
+    "image": "/assets/products/plastic/p64-plastic-bottle.png",
     "images": [
-      "/assets/products/plastic/p64-plastic-bottle.svg"
+      "/assets/products/plastic/p64-plastic-bottle.png"
     ],
     "featured": false,
     "popular": false,
@@ -1398,9 +1398,9 @@ export const PRODUCTS: Product[] = [
     "description": "Plate supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Plate - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p67-plate.svg",
+    "image": "/assets/products/kitchen/p67-plate.png",
     "images": [
-      "/assets/products/kitchen/p67-plate.svg"
+      "/assets/products/kitchen/p67-plate.png"
     ],
     "featured": false,
     "popular": false,
@@ -1419,9 +1419,9 @@ export const PRODUCTS: Product[] = [
     "description": "Pocha supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Pocha - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/cleaning/p68-pocha.svg",
+    "image": "/assets/products/cleaning/p68-pocha.png",
     "images": [
-      "/assets/products/cleaning/p68-pocha.svg"
+      "/assets/products/cleaning/p68-pocha.png"
     ],
     "featured": false,
     "popular": false,
@@ -1440,9 +1440,9 @@ export const PRODUCTS: Product[] = [
     "description": "Potatoo pikller supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Potatoo pikller - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p69-potatoo-pikller.svg",
+    "image": "/assets/products/kitchen/p69-potatoo-pikller.jpg",
     "images": [
-      "/assets/products/kitchen/p69-potatoo-pikller.svg"
+      "/assets/products/kitchen/p69-potatoo-pikller.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -1461,9 +1461,9 @@ export const PRODUCTS: Product[] = [
     "description": "Prime lemon set supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Prime lemon set - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p70-prime-lemon-set.svg",
+    "image": "/assets/products/kitchen/p70-prime-lemon-set.png",
     "images": [
-      "/assets/products/kitchen/p70-prime-lemon-set.svg"
+      "/assets/products/kitchen/p70-prime-lemon-set.png"
     ],
     "featured": true,
     "popular": false,
@@ -1482,9 +1482,9 @@ export const PRODUCTS: Product[] = [
     "description": "Rack supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Rack - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p71-rack.svg",
+    "image": "/assets/products/household/p71-rack.jpg",
     "images": [
-      "/assets/products/household/p71-rack.svg"
+      "/assets/products/household/p71-rack.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1503,9 +1503,9 @@ export const PRODUCTS: Product[] = [
     "description": "Rain coat supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Rain coat - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p72-rain-coat.svg",
+    "image": "/assets/products/household/p72-rain-coat.jpg",
     "images": [
-      "/assets/products/household/p72-rain-coat.svg"
+      "/assets/products/household/p72-rain-coat.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -1524,9 +1524,9 @@ export const PRODUCTS: Product[] = [
     "description": "Sejals steel cup supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Sejals steel cup - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p73-sejals-steel-cup.svg",
+    "image": "/assets/products/kitchen/p73-sejals-steel-cup.png",
     "images": [
-      "/assets/products/kitchen/p73-sejals-steel-cup.svg"
+      "/assets/products/kitchen/p73-sejals-steel-cup.png"
     ],
     "featured": false,
     "popular": false,
@@ -1545,9 +1545,9 @@ export const PRODUCTS: Product[] = [
     "description": "Shin Max glass supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Shin Max glass - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/general/p74-shin-max-glass.svg",
+    "image": "/assets/products/general/p74-shin-max-glass.jpg",
     "images": [
-      "/assets/products/general/p74-shin-max-glass.svg"
+      "/assets/products/general/p74-shin-max-glass.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1559,16 +1559,16 @@ export const PRODUCTS: Product[] = [
   {
     "id": "p75-small-tiffin-marcos",
     "slug": "p75-small-tiffin-marcos",
-    "name": "Small tiffin – Marcos",
+    "name": "Small tiffin \u2013 Marcos",
     "sku": "NPS-KIT-075",
     "category": "kitchen",
     "subcategory": "Cookware & Dining",
-    "description": "Small tiffin – Marcos supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
-    "shortDescription": "Small tiffin – Marcos - Available at New Pashupati Suppliers",
+    "description": "Small tiffin \u2013 Marcos supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
+    "shortDescription": "Small tiffin \u2013 Marcos - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p75-small-tiffin-marcos.svg",
+    "image": "/assets/products/kitchen/p75-small-tiffin-marcos.png",
     "images": [
-      "/assets/products/kitchen/p75-small-tiffin-marcos.svg"
+      "/assets/products/kitchen/p75-small-tiffin-marcos.png"
     ],
     "featured": true,
     "popular": true,
@@ -1587,9 +1587,9 @@ export const PRODUCTS: Product[] = [
     "description": "Soup ladel supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Soup ladel - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p76-soup-ladel.svg",
+    "image": "/assets/products/kitchen/p76-soup-ladel.jpg",
     "images": [
-      "/assets/products/kitchen/p76-soup-ladel.svg"
+      "/assets/products/kitchen/p76-soup-ladel.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1608,9 +1608,9 @@ export const PRODUCTS: Product[] = [
     "description": "Spoon supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Spoon - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p77-spoon.svg",
+    "image": "/assets/products/kitchen/p77-spoon.jpg",
     "images": [
-      "/assets/products/kitchen/p77-spoon.svg"
+      "/assets/products/kitchen/p77-spoon.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1629,9 +1629,9 @@ export const PRODUCTS: Product[] = [
     "description": "Stainer supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Stainer - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p78-stainer.svg",
+    "image": "/assets/products/kitchen/p78-stainer.jpg",
     "images": [
-      "/assets/products/kitchen/p78-stainer.svg"
+      "/assets/products/kitchen/p78-stainer.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -1650,9 +1650,9 @@ export const PRODUCTS: Product[] = [
     "description": "Steel plate supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Steel plate - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p79-steel-plate.svg",
+    "image": "/assets/products/kitchen/p79-steel-plate.png",
     "images": [
-      "/assets/products/kitchen/p79-steel-plate.svg"
+      "/assets/products/kitchen/p79-steel-plate.png"
     ],
     "featured": false,
     "popular": false,
@@ -1671,9 +1671,9 @@ export const PRODUCTS: Product[] = [
     "description": "Tea cups supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Tea cups - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p80-tea-cups.svg",
+    "image": "/assets/products/kitchen/p80-tea-cups.jpg",
     "images": [
-      "/assets/products/kitchen/p80-tea-cups.svg"
+      "/assets/products/kitchen/p80-tea-cups.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -1692,9 +1692,9 @@ export const PRODUCTS: Product[] = [
     "description": "Thermos 100ml supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Thermos 100ml - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/storage/p81-thermos-100ml.svg",
+    "image": "/assets/products/storage/p81-thermos-100ml.png",
     "images": [
-      "/assets/products/storage/p81-thermos-100ml.svg"
+      "/assets/products/storage/p81-thermos-100ml.png"
     ],
     "featured": false,
     "popular": true,
@@ -1713,9 +1713,9 @@ export const PRODUCTS: Product[] = [
     "description": "Thermos 750ml supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Thermos 750ml - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/storage/p82-thermos-750ml.svg",
+    "image": "/assets/products/storage/p82-thermos-750ml.png",
     "images": [
-      "/assets/products/storage/p82-thermos-750ml.svg"
+      "/assets/products/storage/p82-thermos-750ml.png"
     ],
     "featured": false,
     "popular": false,
@@ -1734,9 +1734,9 @@ export const PRODUCTS: Product[] = [
     "description": "Thermos 1500ml supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Thermos 1500ml - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/storage/p83-thermos-1500ml.svg",
+    "image": "/assets/products/storage/p83-thermos-1500ml.png",
     "images": [
-      "/assets/products/storage/p83-thermos-1500ml.svg"
+      "/assets/products/storage/p83-thermos-1500ml.png"
     ],
     "featured": false,
     "popular": false,
@@ -1755,9 +1755,9 @@ export const PRODUCTS: Product[] = [
     "description": "Thermos 1800ml supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Thermos 1800ml - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/storage/p84-thermos-1800ml.svg",
+    "image": "/assets/products/storage/p84-thermos-1800ml.png",
     "images": [
-      "/assets/products/storage/p84-thermos-1800ml.svg"
+      "/assets/products/storage/p84-thermos-1800ml.png"
     ],
     "featured": false,
     "popular": true,
@@ -1776,9 +1776,9 @@ export const PRODUCTS: Product[] = [
     "description": "Tray supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Tray - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/kitchen/p85-tray.svg",
+    "image": "/assets/products/kitchen/p85-tray.png",
     "images": [
-      "/assets/products/kitchen/p85-tray.svg"
+      "/assets/products/kitchen/p85-tray.png"
     ],
     "featured": true,
     "popular": false,
@@ -1797,9 +1797,9 @@ export const PRODUCTS: Product[] = [
     "description": "Tripal 6x9 supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Tripal 6x9 - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p86-tripal-6x9.svg",
+    "image": "/assets/products/household/p86-tripal-6x9.jpg",
     "images": [
-      "/assets/products/household/p86-tripal-6x9.svg"
+      "/assets/products/household/p86-tripal-6x9.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1818,9 +1818,9 @@ export const PRODUCTS: Product[] = [
     "description": "Tripal 9x12 supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Tripal 9x12 - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p87-tripal-9x12.svg",
+    "image": "/assets/products/household/p87-tripal-9x12.jpg",
     "images": [
-      "/assets/products/household/p87-tripal-9x12.svg"
+      "/assets/products/household/p87-tripal-9x12.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -1839,9 +1839,9 @@ export const PRODUCTS: Product[] = [
     "description": "Tripal 12x15 supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Tripal 12x15 - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p88-tripal-12x15.svg",
+    "image": "/assets/products/household/p88-tripal-12x15.jpg",
     "images": [
-      "/assets/products/household/p88-tripal-12x15.svg"
+      "/assets/products/household/p88-tripal-12x15.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1860,9 +1860,9 @@ export const PRODUCTS: Product[] = [
     "description": "Tripal 15x18 supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Tripal 15x18 - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p89-tripal-15x18.svg",
+    "image": "/assets/products/household/p89-tripal-15x18.jpg",
     "images": [
-      "/assets/products/household/p89-tripal-15x18.svg"
+      "/assets/products/household/p89-tripal-15x18.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1881,9 +1881,9 @@ export const PRODUCTS: Product[] = [
     "description": "Tripal 18x24 supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Tripal 18x24 - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p90-tripal-18x24.svg",
+    "image": "/assets/products/household/p90-tripal-18x24.jpg",
     "images": [
-      "/assets/products/household/p90-tripal-18x24.svg"
+      "/assets/products/household/p90-tripal-18x24.jpg"
     ],
     "featured": true,
     "popular": true,
@@ -1902,9 +1902,9 @@ export const PRODUCTS: Product[] = [
     "description": "Tripal 18x30 supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Tripal 18x30 - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p91-tripal-18x30.svg",
+    "image": "/assets/products/household/p91-tripal-18x30.jpg",
     "images": [
-      "/assets/products/household/p91-tripal-18x30.svg"
+      "/assets/products/household/p91-tripal-18x30.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1923,9 +1923,9 @@ export const PRODUCTS: Product[] = [
     "description": "Tripal 18x33 supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Tripal 18x33 - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p92-tripal-18x33.svg",
+    "image": "/assets/products/household/p92-tripal-18x33.jpg",
     "images": [
-      "/assets/products/household/p92-tripal-18x33.svg"
+      "/assets/products/household/p92-tripal-18x33.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1944,9 +1944,9 @@ export const PRODUCTS: Product[] = [
     "description": "Tripal 18x36 supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Tripal 18x36 - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/household/p93-tripal-18x36.svg",
+    "image": "/assets/products/household/p93-tripal-18x36.jpg",
     "images": [
-      "/assets/products/household/p93-tripal-18x36.svg"
+      "/assets/products/household/p93-tripal-18x36.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -1965,9 +1965,9 @@ export const PRODUCTS: Product[] = [
     "description": "Universal kettle supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Universal kettle - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/electrical/p94-universal-kettle.svg",
+    "image": "/assets/products/electrical/p94-universal-kettle.jpg",
     "images": [
-      "/assets/products/electrical/p94-universal-kettle.svg"
+      "/assets/products/electrical/p94-universal-kettle.jpg"
     ],
     "featured": false,
     "popular": false,
@@ -1986,9 +1986,9 @@ export const PRODUCTS: Product[] = [
     "description": "Water dispenser supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Water dispenser - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/electrical/p95-water-dispenser.svg",
+    "image": "/assets/products/electrical/p95-water-dispenser.jpg",
     "images": [
-      "/assets/products/electrical/p95-water-dispenser.svg"
+      "/assets/products/electrical/p95-water-dispenser.jpg"
     ],
     "featured": true,
     "popular": false,
@@ -2007,9 +2007,9 @@ export const PRODUCTS: Product[] = [
     "description": "Wifer supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Wifer - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/cleaning/p96-wifer.svg",
+    "image": "/assets/products/cleaning/p96-wifer.jpg",
     "images": [
-      "/assets/products/cleaning/p96-wifer.svg"
+      "/assets/products/cleaning/p96-wifer.jpg"
     ],
     "featured": false,
     "popular": true,
@@ -2028,9 +2028,9 @@ export const PRODUCTS: Product[] = [
     "description": "Yasuda water dispenser supplied by New Pashupati Suppliers in Hetauda. Durable quality for wholesale and retail procurement.",
     "shortDescription": "Yasuda water dispenser - Available at New Pashupati Suppliers",
     "brand": "New Pashupati",
-    "image": "/assets/products/electrical/p97-yasuda-water-dispenser.svg",
+    "image": "/assets/products/electrical/p97-yasuda-water-dispenser.jpg",
     "images": [
-      "/assets/products/electrical/p97-yasuda-water-dispenser.svg"
+      "/assets/products/electrical/p97-yasuda-water-dispenser.jpg"
     ],
     "featured": false,
     "popular": false,

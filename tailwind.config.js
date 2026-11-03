@@ -7,32 +7,51 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: {
-          DEFAULT: '#0B1F3A',
-          dark: '#07182D',
-          light: '#132B4D',
+        primary: {
+          DEFAULT: '#F58220',
+          hover: '#E97516',
+          light: '#FFF4EB',
         },
+        secondary: {
+          DEFAULT: '#13984B',
+          light: '#EBF7EE',
+        },
+        tertiary: {
+          DEFAULT: '#F08080',
+          light: '#FEECEC',
+        },
+        navy: {
+          DEFAULT: '#09132F',
+          dark: '#050B1A',
+          light: '#132147',
+        },
+        surface: {
+          DEFAULT: '#F8F8F9',
+          muted: '#F1F0F6',
+        },
+        // Keep brand aliases for full backwards compatibility
         brandRed: {
-          DEFAULT: '#F23822',
-          hover: '#D92A18',
+          DEFAULT: '#F58220',
+          hover: '#E97516',
+          light: '#FFF4EB',
         },
         brandOrange: {
-          DEFAULT: '#FF5533',
+          DEFAULT: '#F58220',
         },
-        brandBg: '#F7F8FA',
-        brandSurface: '#FFFFFF',
+        brandBg: '#FFFFFF',
+        brandSurface: '#F8F8F9',
         brandText: {
-          DEFAULT: '#172033',
-          muted: '#667085',
-          subtle: '#98A2B3',
+          DEFAULT: '#171717',
+          muted: '#777777',
+          subtle: '#9CA3AF',
         },
         brandBorder: {
-          DEFAULT: '#E5E7EB',
-          strong: '#D0D5DD',
+          DEFAULT: '#EEEEF0',
+          strong: '#DCDCDE',
         },
         brandSuccess: {
-          DEFAULT: '#16A34A',
-          light: '#DCFCE7',
+          DEFAULT: '#13984B',
+          light: '#EBF7EE',
         },
         brandError: {
           DEFAULT: '#DC2626',
@@ -40,22 +59,27 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       boxShadow: {
-        'soft-sm': '0 1px 3px 0 rgba(11, 31, 58, 0.05)',
-        'soft-md': '0 4px 16px -2px rgba(11, 31, 58, 0.06), 0 2px 6px -1px rgba(11, 31, 58, 0.03)',
-        'soft-lg': '0 12px 28px -4px rgba(11, 31, 58, 0.08), 0 4px 12px -2px rgba(11, 31, 58, 0.04)',
-        'soft-xl': '0 20px 36px -6px rgba(11, 31, 58, 0.12), 0 8px 16px -4px rgba(11, 31, 58, 0.06)',
+        'soft-xs': '0 1px 2px 0 rgba(9, 19, 47, 0.04)',
+        'soft-sm': '0 1px 3px 0 rgba(9, 19, 47, 0.05)',
+        'soft-md': '0 4px 16px -2px rgba(9, 19, 47, 0.06), 0 2px 6px -1px rgba(9, 19, 47, 0.03)',
+        'soft-lg': '0 12px 28px -4px rgba(9, 19, 47, 0.08), 0 4px 12px -2px rgba(9, 19, 47, 0.04)',
       },
       borderRadius: {
         'card': '16px',
-        'btn': '10px',
-        'img': '20px',
+        'section': '14px',
+        'button': '24px',
+        'btn': '24px',
+        'img': '16px',
       },
       maxWidth: {
-        'container': '1280px',
-      }
+        'container': '1240px',
+      },
+      transitionDuration: {
+        'interaction': '180ms',
+      },
     },
   },
   plugins: [],

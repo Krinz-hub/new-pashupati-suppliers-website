@@ -4,20 +4,26 @@ import { CATEGORIES as DEFAULT_CATEGORIES } from '../data/categories';
 
 export const categoryService = {
   async getAllCategories(): Promise<Category[]> {
-    const { data, error } = await apiClient.request<{ categories: Category[] }>('/api/categories');
-    if (error || !data || !Array.isArray(data.categories)) {
+    const { data, error } = await apiClient.request<any>('/api/categories');
+    const list = Array.isArray(data?.categories)
+      ? data.categories
+      : Array.isArray(data?.data)
+      ? data.data
+      : null;
+    if (error || !list) {
       return DEFAULT_CATEGORIES;
     }
-    return data.categories;
+    return list;
   },
 
   async getCategory(idOrSlug: string): Promise<Category | null> {
-    const { data, error } = await apiClient.request<{ category: Category }>(`/api/categories/${idOrSlug}`);
-    if (error || !data?.category) {
+    const { data, error } = await apiClient.request<any>(`/api/categories/${idOrSlug}`);
+    const category = data?.category || data?.data;
+    if (error || !category) {
       const fallback = DEFAULT_CATEGORIES.find((c) => c.id === idOrSlug || c.slug === idOrSlug);
       return fallback || null;
     }
-    return data.category;
+    return category;
   },
 
   async createCategory(formData: CategoryFormData): Promise<{ success: boolean; category?: Category; error?: string }> {

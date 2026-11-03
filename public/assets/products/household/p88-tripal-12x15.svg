@@ -1,45 +1,66 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F8FAFC" />
+    <!-- Seamless Pure White Studio Lighting Gradients -->
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94A3B8" />
+      <stop offset="25%" stop-color="#E2E8F0" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="75%" stop-color="#CBD5E1" />
+      <stop offset="100%" stop-color="#64748B" />
+    </linearGradient>
+
+    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="35%" stop-color="#CBD5E1" />
+      <stop offset="70%" stop-color="#94A3B8" />
       <stop offset="100%" stop-color="#E2E8F0" />
     </linearGradient>
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#334155" />
-      <stop offset="100%" stop-color="#0F172A" />
+
+    <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="30%" stop-color="#F59E0B" />
+      <stop offset="70%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#B45309" />
     </linearGradient>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0F172A" flood-opacity="0.18" />
-    </filter>
+
+    <linearGradient id="nonstickGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#262626" />
+      <stop offset="50%" stop-color="#171717" />
+      <stop offset="100%" stop-color="#0A0A0A" />
+    </linearGradient>
+
+    <linearGradient id="strawGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="50%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
   </defs>
 
-  <!-- Studio Background -->
-  <rect width="600" height="450" fill="url(#bgGrad)" />
-  <ellipse cx="300" cy="390" rx="230" ry="24" fill="#CBD5E1" opacity="0.5" filter="blur(10px)" />
+  <!-- 1. Pure Seamless White Background (#FFFFFF) -->
+  <rect width="600" height="450" fill="#FFFFFF" />
 
-  <!-- Central Product Card Container -->
-  <g transform="translate(90, 45)" filter="url(#shadow)">
-    <rect width="420" height="310" rx="20" fill="url(#cardGrad)" />
+  <!-- 2. Subtle Natural Contact Floor Shadow -->
+  
+    <ellipse cx="300" cy="385" rx="160" ry="18" fill="#D1D5DB" opacity="0.45" filter="blur(8px)" />
+    <ellipse cx="300" cy="384" rx="90" ry="8" fill="#9CA3AF" opacity="0.6" filter="blur(4px)" />
+  
 
-    <!-- Grid lines -->
-    <line x1="0" y1="80" x2="420" y2="80" stroke="#FFFFFF" stroke-opacity="0.06" stroke-dasharray="4,4" />
-    <line x1="0" y1="160" x2="420" y2="160" stroke="#FFFFFF" stroke-opacity="0.06" stroke-dasharray="4,4" />
-    <line x1="0" y1="240" x2="420" y2="240" stroke="#FFFFFF" stroke-opacity="0.06" stroke-dasharray="4,4" />
-
-    <!-- Badge -->
-    <rect x="24" y="24" width="130" height="26" rx="13" fill="#F23822" />
-    <text x="89" y="41" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">HOUSEHOLD</text>
-
-    <!-- Custom Category Icon Graphic -->
-    <g transform="translate(10, 10)">
-      
-        <rect x="150" y="90" width="100" height="90" rx="12" fill="#94A3B8" />
-        <path d="M 150 90 L 200 60 L 250 90 Z" fill="#F23822" />
-      
-    </g>
-
-    <!-- Text Information -->
-    <text x="210" y="228" font-family="system-ui, sans-serif" font-size="17" font-weight="800" fill="#FFFFFF" text-anchor="middle">Tripal 12x15</text>
-    <text x="210" y="255" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="middle">NEW PASHUPATI SUPPLIERS • HETAUDA</text>
+  <!-- 3. Realistic Centered Product Object -->
+  <g id="product-artwork">
+    
+      <!-- Folded Blue & Silver Tarpaulin Sheet -->
+      <g transform="translate(180, 180)">
+        <polygon points="0,90 120,40 240,80 120,135" fill="#2563EB" />
+        <polygon points="0,90 120,135 120,180 0,135" fill="#1D4ED8" />
+        <polygon points="120,135 240,80 240,125 120,180" fill="#1E40AF" />
+        <!-- Silver inner fold layer -->
+        <polygon points="10,85 120,38 230,76 120,125" fill="#E2E8F0" opacity="0.9" />
+        <!-- Brass eyelet grommet -->
+        <circle cx="22" cy="95" r="7" fill="#F59E0B" stroke="#B45309" stroke-width="2" />
+        <circle cx="22" cy="95" r="3.5" fill="#1E293B" />
+        <circle cx="220" cy="85" r="7" fill="#F59E0B" stroke="#B45309" stroke-width="2" />
+        <circle cx="220" cy="85" r="3.5" fill="#1E293B" />
+      </g>
+    
   </g>
 </svg>

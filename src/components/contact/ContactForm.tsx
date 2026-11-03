@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { User, Phone, Mail, MessageSquare, Send } from 'lucide-react';
 import { Button } from '../common/Button';
 import { FormStatus } from './FormStatus';
@@ -13,12 +14,30 @@ interface FormErrors {
 }
 
 export const ContactForm: React.FC = () => {
+  const [searchParams] = useSearchParams();
+  const productParam = searchParams.get('product');
+  const typeParam = searchParams.get('type');
+
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     phone: '',
     email: '',
     message: '',
   });
+
+  useEffect(() => {
+    if (productParam) {
+      setFormData((prev) => ({
+        ...prev,
+        message: prev.message || `Hello, I would like to inquire about availability and pricing for: ${productParam}.`,
+      }));
+    } else if (typeParam === 'wholesale' || typeParam === 'quote') {
+      setFormData((prev) => ({
+        ...prev,
+        message: prev.message || `Hello, I am interested in wholesale procurement / bulk purchasing for my business. Please provide your catalog rates.`,
+      }));
+    }
+  }, [productParam, typeParam]);
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);

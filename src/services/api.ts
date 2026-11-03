@@ -1,34 +1,15 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+import { Product, Category } from '../types';
 
-export interface ProductItem {
-  _id?: string;
-  id?: string;
-  name: string;
-  slug: string;
-  sku?: string;
-  category: string;
-  subcategory?: string;
-  description: string;
-  shortDescription?: string;
-  brand?: string;
-  image: string;
-  images?: any[];
-  featured?: boolean;
-  popular?: boolean;
-  available?: boolean;
-  unit?: string;
-  packSize?: string;
-  imageStatus?: string;
-}
+export type ProductItem = Product;
+export type CategoryItem = Category;
 
-export interface CategoryItem {
-  id: string;
-  name: string;
-  slug: string;
-  description: string;
-  image: string;
-  productCount?: number | null;
-  iconName?: string;
+function getApiUrl(path: string): URL {
+  const base = (import.meta.env.VITE_API_URL || '/api').replace(/\/+$/, '');
+  if (base.startsWith('http://') || base.startsWith('https://')) {
+    return new URL(`${base}${path}`);
+  }
+  const origin = typeof window !== 'undefined' ? window.location.origin : 'http://localhost:5173';
+  return new URL(`${origin}${base}${path}`);
 }
 
 export async function fetchProducts(params: {
@@ -39,10 +20,10 @@ export async function fetchProducts(params: {
   popular?: boolean;
   page?: number;
   limit?: number;
-}): Promise<{ data: ProductItem[]; pagination: any }> {
+}): Promise<{ data: Product[]; pagination: any }> {
   try {
-    const url = new URL(`${API_BASE_URL}/products`);
-    if (params.category) url.searchParams.append('category', params.category);
+    const url = getApiUrl('/products');
+    if (params.category && params.category !== 'all') url.searchParams.append('category', params.category);
     if (params.subcategory) url.searchParams.append('subcategory', params.subcategory);
     if (params.search) url.searchParams.append('search', params.search);
     if (params.featured) url.searchParams.append('featured', 'true');
@@ -53,8 +34,13 @@ export async function fetchProducts(params: {
     const res = await fetch(url.toString());
     if (res.ok) {
       const result = await res.json();
-      if (result.success) {
-        return { data: result.data, pagination: result.pagination };
+      const list = Array.isArray(result?.data)
+        ? result.data
+        : Array.isArray(result?.products)
+        ? result.products
+        : null;
+      if (list) {
+        return { data: list, pagination: result.pagination || { total: list.length } };
       }
     }
   } catch (err) {
@@ -62,13 +48,13 @@ export async function fetchProducts(params: {
   }
 
   const { PRODUCTS } = await import('../data/products');
-  let items: ProductItem[] = [...PRODUCTS].map((p) => ({
+  let items: Product[] = [...PRODUCTS].map((p) => ({
     ...p,
-    slug: p.id,
-    images: [p.image],
+    slug: p.slug || p.id,
+    images: p.images || [p.image],
   }));
 
-  if (params.category) {
+  if (params.category && params.category !== 'all') {
     items = items.filter((p) => p.category.toLowerCase() === params.category!.toLowerCase());
   }
   if (params.featured) {
@@ -92,29 +78,41 @@ export async function fetchProducts(params: {
   };
 }
 
-export async function fetchProductBySlug(slug: string): Promise<ProductItem | null> {
+export async function fetchProductBySlug(slug: string): Promise<Product | null> {
   try {
-    const res = await fetch(`${API_BASE_URL}/products/${slug}`);
+    const url = getApiUrl(`/products/${encodeURIComponent(slug)}`);
+    const res = await fetch(url.toString());
     if (res.ok) {
       const result = await res.json();
-      if (result.success) return result.data;
+      const prod = result?.data || result?.product;
+      if (prod) return prod;
     }
   } catch (err) {}
 
   const { PRODUCTS } = await import('../data/products');
-  const found = PRODUCTS.find((p) => p.id.toLowerCase() === slug.toLowerCase() || p.name.toLowerCase().replace(/[\s]+/g, '-').includes(slug.toLowerCase()));
+  const found = PRODUCTS.find(
+    (p) =>
+      p.id.toLowerCase() === slug.toLowerCase() ||
+      p.name.toLowerCase().replace(/[\s]+/g, '-').includes(slug.toLowerCase())
+  );
   if (found) {
-    return { ...found, slug: found.id, images: [found.image] };
+    return { ...found, slug: found.slug || found.id, images: found.images || [found.image] };
   }
   return null;
 }
 
-export async function fetchCategories(): Promise<CategoryItem[]> {
+export async function fetchCategories(): Promise<Category[]> {
   try {
-    const res = await fetch(`${API_BASE_URL}/categories`);
+    const url = getApiUrl('/categories');
+    const res = await fetch(url.toString());
     if (res.ok) {
       const result = await res.json();
-      if (result.success) return result.data;
+      const list = Array.isArray(result?.data)
+        ? result.data
+        : Array.isArray(result?.categories)
+        ? result.categories
+        : null;
+      if (list) return list;
     }
   } catch (err) {}
 
@@ -131,7 +129,8 @@ export async function submitInquiry(data: {
   message: string;
 }): Promise<{ success: boolean; message: string }> {
   try {
-    const res = await fetch(`${API_BASE_URL}/inquiries`, {
+    const url = getApiUrl('/inquiries');
+    const res = await fetch(url.toString(), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -144,6 +143,6 @@ export async function submitInquiry(data: {
 
   return {
     success: true,
-    message: "Your inquiry has been submitted! Our supply team in Hetauda will respond shortly.",
+    message: 'Your inquiry has been submitted! Our supply team in Hetauda will respond shortly.',
   };
 }

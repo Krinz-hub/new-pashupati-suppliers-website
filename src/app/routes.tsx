@@ -1,12 +1,10 @@
-import { RouteObject } from 'react-router-dom';
+import { RouteObject, Navigate } from 'react-router-dom';
 import { Home } from '../pages/Home';
-import { About } from '../pages/About';
 import { Products } from '../pages/Products';
 import { ProductDetails } from '../pages/ProductDetails';
 import { Categories } from '../pages/Categories';
 import { CategoryDetails } from '../pages/CategoryDetails';
 import { Wholesale } from '../pages/Wholesale';
-import { Portfolio } from '../pages/Portfolio';
 import { Blogs } from '../pages/Blogs';
 import { BlogDetail } from '../pages/BlogDetail';
 import { Contact } from '../pages/Contact';
@@ -32,7 +30,7 @@ export const routes: RouteObject[] = [
   },
   {
     path: '/about',
-    element: <About />,
+    element: <Navigate to="/" replace />,
   },
   {
     path: '/products',
@@ -56,7 +54,7 @@ export const routes: RouteObject[] = [
   },
   {
     path: '/portfolio',
-    element: <Portfolio />,
+    element: <Navigate to="/products" replace />,
   },
   {
     path: '/blogs',
@@ -64,6 +62,14 @@ export const routes: RouteObject[] = [
   },
   {
     path: '/blogs/:slug',
+    element: <BlogDetail />,
+  },
+  {
+    path: '/blog',
+    element: <Blogs />,
+  },
+  {
+    path: '/blog/:slug',
     element: <BlogDetail />,
   },
   {

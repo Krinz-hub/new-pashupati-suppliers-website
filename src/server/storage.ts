@@ -78,6 +78,27 @@ if (!g.__pashupati_memory_store) {
 
 const memory = g.__pashupati_memory_store;
 
+// Synchronize in-memory products with latest catalog data (e.g. newly downloaded authentic images)
+if (memory && memory.products) {
+  const prodMap = new Map(
+    PRODUCTS.map((p) => [
+      p.name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/(^-|-$)+/g, ''),
+      p,
+    ])
+  );
+  for (const item of memory.products) {
+    const updated = prodMap.get(item.id) || prodMap.get(item.slug);
+    if (updated) {
+      item.image = updated.image;
+      item.featuredImage = updated.image;
+      item.images = [{ url: updated.image, altText: updated.name, sortOrder: 0 }];
+    }
+  }
+}
+
 export const Storage = {
   // Users
   async countUsers(): Promise<number> {

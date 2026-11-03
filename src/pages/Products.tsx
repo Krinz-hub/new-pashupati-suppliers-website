@@ -7,14 +7,16 @@ import { ProductGrid } from '../components/products/ProductGrid';
 import { Reveal } from '../components/common/Reveal';
 import { useProducts } from '../hooks/useProducts';
 import { PRODUCTS as DEFAULT_PRODUCTS } from '../data/products';
-import { setPageTitle } from '../utils/helpers';
+import { setPageTitle, filterProducts, isProductInWishlist } from '../utils/helpers';
 
 export const Products: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const categoryParam = searchParams.get('category') || 'all';
+  const queryParam = searchParams.get('search') || '';
+  const savedParam = searchParams.get('saved') === 'true';
 
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam);
-  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>(queryParam);
 
   // Fetch dynamic products from CMS with published filter
   const { products: dynamicProducts, loading } = useProducts({ status: 'published' });
@@ -23,8 +25,8 @@ export const Products: React.FC = () => {
   const productList = !loading || dynamicProducts.length > 0 ? dynamicProducts : DEFAULT_PRODUCTS;
 
   useEffect(() => {
-    setPageTitle('Our Products | New Pashupati Suppliers');
-  }, []);
+    setPageTitle(savedParam ? 'Saved Products | New Pashupati Suppliers' : 'Product Catalog | New Pashupati Suppliers');
+  }, [savedParam]);
 
   // Synchronize state with URL query parameters
   useEffect(() => {
@@ -32,6 +34,12 @@ export const Products: React.FC = () => {
       setSelectedCategory(categoryParam);
     }
   }, [categoryParam]);
+
+  useEffect(() => {
+    if (queryParam !== undefined) {
+      setSearchQuery(queryParam);
+    }
+  }, [queryParam]);
 
   const handleCategorySelect = (slug: string) => {
     setSelectedCategory(slug);
@@ -43,55 +51,60 @@ export const Products: React.FC = () => {
     setSearchParams(searchParams, { replace: true });
   };
 
+  const handleSearchChange = (query: string) => {
+    setSearchQuery(query);
+    if (!query.trim()) {
+      searchParams.delete('search');
+    } else {
+      searchParams.set('search', query);
+    }
+    setSearchParams(searchParams, { replace: true });
+  };
+
   const handleResetFilters = () => {
     setSelectedCategory('all');
     setSearchQuery('');
     searchParams.delete('category');
+    searchParams.delete('search');
+    searchParams.delete('saved');
     setSearchParams(searchParams, { replace: true });
   };
 
-  // Filter products by category and search query
+  // Filter products by category, search query, and saved status
   const filteredProducts = useMemo(() => {
-    return productList.filter((product) => {
-      const matchesCategory =
-        selectedCategory === 'all' ||
-        product.category.toLowerCase() === selectedCategory.toLowerCase() ||
-        (product as any).categoryId === selectedCategory;
-
-      const matchesSearch =
-        !searchQuery.trim() ||
-        product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        product.category.toLowerCase().includes(searchQuery.toLowerCase());
-
-      return matchesCategory && matchesSearch;
-    });
-  }, [productList, selectedCategory, searchQuery]);
+    let list = productList;
+    if (savedParam) {
+      list = list.filter((p) => isProductInWishlist(p.id || p.slug || ''));
+    }
+    return filterProducts(list, { category: selectedCategory, query: searchQuery });
+  }, [productList, selectedCategory, searchQuery, savedParam]);
 
   return (
-    <main>
-      <Reveal variant="fade-in">
-        <PageHero
-          eyebrow="PRODUCT SHOWCASE &amp; INVENTORY"
-          title="Explore Our Products"
-          description="Discover everyday utility items, cookware, plastics, cleaning essentials, and electrical supplies available for retail and bulk purchase."
-        />
-      </Reveal>
+    <main className="bg-white min-h-screen">
+      {/* Unified Split Page Header */}
+      <PageHero
+        align="split"
+        eyebrow="MARKETPLACE CATALOG"
+        title="All Products & Supplies"
+        description="Browse everyday utility items, cookware, plastics, cleaning essentials, and electrical supplies."
+      />
 
-      <section className="py-6 sm:py-16 lg:py-20 bg-brandBg min-h-[500px]">
+      {/* Main Catalog Section */}
+      <section className="py-6 sm:py-8 bg-white min-h-[500px]">
         <Container>
-          <Reveal variant="fade-up" delay={50}>
+          <Reveal variant="fade-up" delay={20}>
             <CategoryFilter
               selectedCategory={selectedCategory}
               onSelectCategory={handleCategorySelect}
               searchQuery={searchQuery}
-              onSearchChange={setSearchQuery}
+              onSearchChange={handleSearchChange}
               totalProductsCount={filteredProducts.length}
             />
           </Reveal>
 
           <ProductGrid
             products={filteredProducts}
+            loading={loading}
             onResetFilters={handleResetFilters}
           />
         </Container>

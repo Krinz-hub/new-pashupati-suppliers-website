@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { X, Phone, Mail, ArrowRight, MessageSquare } from 'lucide-react';
+import { X, Phone, Mail, ArrowRight, MessageSquare, MapPin } from 'lucide-react';
 import { Logo } from '../common/Logo';
 import { Button } from '../common/Button';
 import { BUSINESS } from '../../config/business';
@@ -39,24 +39,24 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
     <div className="fixed inset-0 z-50 md:hidden flex flex-col">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-navy/60 backdrop-blur-sm transition-opacity duration-300"
+        className="fixed inset-0 bg-[#09132F]/50 backdrop-blur-xs transition-opacity duration-200"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Drawer */}
       <div
-        className="relative z-10 w-full max-w-xs ml-auto h-full bg-white shadow-2xl flex flex-col justify-between overflow-y-auto"
+        className="relative z-10 w-full max-w-[300px] h-full bg-white shadow-xl flex flex-col justify-between overflow-y-auto animate-modal-enter"
         role="dialog"
         aria-modal="true"
         aria-label="Mobile Navigation Menu"
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-brandBorder">
+        <div className="flex items-center justify-between px-4 py-3.5 border-b border-[#EEEEF0]">
           <Logo variant="compact" />
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-brandText-muted hover:text-navy hover:bg-slate-100 transition-colors focus-visible:ring-2 focus-visible:ring-brandRed"
+            className="p-1.5 rounded-full text-[#777777] hover:text-[#09132F] hover:bg-[#F8F8F9] transition-colors focus-visible:ring-2 focus-visible:ring-[#F58220]"
             aria-label="Close menu"
           >
             <X className="w-5 h-5" />
@@ -64,7 +64,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         </div>
 
         {/* Navigation Links */}
-        <div className="px-5 py-5 flex-1">
+        <div className="px-4 py-4 flex-1">
+          <div className="text-[10px] font-bold uppercase tracking-wider text-[#777777] mb-2 px-3">
+            Navigation Menu
+          </div>
           <nav className="flex flex-col space-y-1">
             {navLinks.map((link) => (
               <NavLink
@@ -72,10 +75,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                 to={link.path}
                 onClick={onClose}
                 className={({ isActive }) =>
-                  `flex items-center justify-between px-4 py-3 rounded-lg font-medium text-base transition-colors ${
+                  `flex items-center justify-between px-3.5 py-2.5 rounded-[12px] font-medium text-sm transition-colors ${
                     isActive
-                      ? 'bg-brandRed/10 text-brandRed font-bold'
-                      : 'text-brandText hover:bg-slate-50 hover:text-navy'
+                      ? 'bg-[#FFF4EB] text-[#F58220] font-bold'
+                      : 'text-[#171717] hover:bg-[#F8F8F9]'
                   }`
                 }
               >
@@ -85,44 +88,48 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
             ))}
           </nav>
 
-          <div className="mt-6 pt-5 border-t border-brandBorder">
+          <div className="mt-5 pt-4 border-t border-[#EEEEF0]">
             <Button
-              to="/contact"
+              to="/contact?type=wholesale"
               fullWidth
-              size="md"
+              size="sm"
               variant="primary"
               onClick={onClose}
-              rightIcon={<ArrowRight className="w-4 h-4" />}
+              rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
             >
-              Get In Touch
+              Request Wholesale Quote
             </Button>
           </div>
 
           {/* Quick Business Contact Details */}
-          <div className="mt-6 pt-5 border-t border-brandBorder space-y-2.5 text-xs text-brandText-muted">
+          <div className="mt-5 pt-4 border-t border-[#EEEEF0] space-y-2 text-xs text-[#777777]">
             <a
               href={BUSINESS.phoneLink}
-              className="flex items-center gap-2.5 text-navy hover:text-brandRed transition-colors font-medium py-1"
+              className="flex items-center gap-2.5 text-[#171717] hover:text-[#F58220] transition-colors font-medium py-1"
             >
-              <Phone className="w-4 h-4 text-brandRed shrink-0" />
+              <Phone className="w-4 h-4 text-[#F58220] shrink-0" />
               <span>{BUSINESS.phone}</span>
             </a>
             <a
               href={BUSINESS.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2.5 text-navy hover:text-[#25D366] transition-colors font-medium py-1"
+              className="flex items-center gap-2.5 text-[#171717] hover:text-[#13984B] transition-colors font-medium py-1"
             >
-              <MessageSquare className="w-4 h-4 text-[#25D366] shrink-0" />
-              <span>WhatsApp: {BUSINESS.whatsapp}</span>
+              <MessageSquare className="w-4 h-4 text-[#13984B] shrink-0" />
+              <span>WhatsApp Inquiries</span>
             </a>
             <a
               href={BUSINESS.emailLink}
-              className="flex items-center gap-2.5 text-navy hover:text-brandRed transition-colors font-medium py-1"
+              className="flex items-center gap-2.5 text-[#171717] hover:text-[#F58220] transition-colors font-medium py-1"
             >
-              <Mail className="w-4 h-4 text-brandRed shrink-0" />
+              <Mail className="w-4 h-4 text-[#F58220] shrink-0" />
               <span className="truncate">{BUSINESS.email}</span>
             </a>
+            <div className="flex items-center gap-2.5 text-[#777777] py-1">
+              <MapPin className="w-4 h-4 text-[#777777] shrink-0" />
+              <span className="text-[11px] leading-tight">Palpasa Road, Hetauda-2</span>
+            </div>
           </div>
         </div>
       </div>

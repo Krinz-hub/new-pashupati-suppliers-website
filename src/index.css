@@ -2,19 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #F58220;
+  --color-primary-hover: #E97516;
+  --color-secondary: #13984B;
+  --color-tertiary: #F08080;
+  --color-navy: #09132F;
+  --color-background: #FFFFFF;
+  --color-surface: #F8F8F9;
+  --color-surface-muted: #F1F0F6;
+  --color-text: #171717;
+  --color-text-secondary: #777777;
+  --color-border: #EEEEF0;
+  --font-family: Inter, sans-serif;
+  --font-size-body: 14px;
+  --font-size-interface: 13px;
+  --font-size-small: 12px;
+  --font-size-heading: 22px;
+  --font-size-hero: 30px;
+  --spacing-section: 40px;
+  --spacing-grid-gap: 12px;
+  --radius-card: 16px;
+  --radius-section: 14px;
+  --radius-button: 24px;
+  --border-width: 1px;
+  --motion-interaction: 180ms;
+  --motion-easing: ease-out;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Plus Jakarta Sans', Inter, system-ui, -apple-system, sans-serif;
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-text);
   }
   
   body {
-    @apply bg-[#F7F8FA] text-[#172033] antialiased overflow-x-hidden;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-size: var(--font-size-body);
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   /* Accessibility focus styling */
   :focus-visible {
-    @apply outline-none ring-2 ring-brandRed ring-offset-2 ring-offset-white;
+    outline: none;
+    ring: 2px;
+    ring-color: var(--color-primary);
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px var(--color-primary);
   }
 }
 
@@ -35,11 +73,18 @@
 
   /* Smooth image scale on hover */
   .hover-lift {
-    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-soft-lg;
+    transition: transform var(--motion-interaction) var(--motion-easing), box-shadow var(--motion-interaction) var(--motion-easing);
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px -4px rgba(9, 19, 47, 0.08);
   }
 
   .hover-scale {
-    @apply transition-transform duration-500 ease-out hover:scale-[1.03];
+    transition: transform var(--motion-interaction) var(--motion-easing);
+  }
+  .hover-scale:hover {
+    transform: scale(1.03);
   }
 }
 
@@ -56,7 +101,7 @@
 }
 
 .animate-modal-enter {
-  animation: modalEnter 250ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalEnter var(--motion-interaction) cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Reduced motion support */

@@ -8,6 +8,7 @@ interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElemen
   category?: string;
   title?: string;
   aspectRatio?: 'square' | 'video' | 'portrait' | 'wide' | 'auto';
+  fit?: 'contain' | 'cover';
   containerClassName?: string;
 }
 
@@ -17,6 +18,7 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   category,
   title,
   aspectRatio = 'auto',
+  fit = 'contain',
   containerClassName,
   className,
   loading = 'lazy',
@@ -48,14 +50,14 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   return (
     <div
       className={cn(
-        'relative overflow-hidden bg-slate-100',
+        'relative overflow-hidden bg-white',
         aspectClasses[aspectRatio],
         containerClassName
       )}
     >
       {/* Background placeholder while image is downloading */}
       {!isLoaded && (
-        <div className="absolute inset-0 bg-slate-100 animate-pulse flex items-center justify-center">
+        <div className="absolute inset-0 bg-white animate-pulse flex items-center justify-center">
           <span className="sr-only">Loading image...</span>
         </div>
       )}
@@ -67,7 +69,8 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
         onLoad={() => setIsLoaded(true)}
         onError={() => setHasError(true)}
         className={cn(
-          'w-full h-full object-cover transition-opacity duration-300',
+          'w-full h-full transition-opacity duration-200',
+          fit === 'contain' ? 'object-contain' : 'object-cover',
           isLoaded ? 'opacity-100' : 'opacity-0',
           className
         )}

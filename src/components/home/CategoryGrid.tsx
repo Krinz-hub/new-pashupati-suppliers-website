@@ -1,77 +1,89 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ChevronRight, UtensilsCrossed, Home, Box, Zap, Sparkles, Archive, Layers, LucideIcon } from 'lucide-react';
 import { Container } from '../common/Container';
-import { SectionHeading } from '../common/SectionHeading';
-import { ImageWithFallback } from '../common/ImageWithFallback';
 import { Reveal } from '../common/Reveal';
 import { useCategories } from '../../hooks/useCategories';
 import { CATEGORIES as DEFAULT_CATEGORIES } from '../../data/categories';
 
+const ICON_MAP: Record<string, LucideIcon> = {
+  UtensilsCrossed,
+  Home,
+  Box,
+  Zap,
+  Sparkles,
+  Archive,
+  Layers,
+};
+
 export const CategoryGrid: React.FC = () => {
   const { categories: dynamicCategories } = useCategories();
   const allCategories = dynamicCategories.length > 0 ? dynamicCategories : DEFAULT_CATEGORIES;
-  const featuredCategories = allCategories.slice(0, 6);
 
   return (
-    <section className="py-10 sm:py-20 lg:py-24 bg-white border-b border-brandBorder/60">
+    <section className="py-6 sm:py-8 bg-white">
       <Container>
-        <Reveal variant="fade-up">
-          <SectionHeading
-            eyebrow="OUR COLLECTIONS"
-            title="Explore by Product Category"
-            description="Discover wholesale and retail supplies categorized for homes, commercial kitchens, retailers, and institutions."
-          />
-        </Reveal>
+        {/* Section Header: Title aligned left, small orange See All aligned right */}
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
+          <div className="flex items-center gap-2">
+            <h2 className="text-lg sm:text-2xl font-bold text-[#09132F] tracking-tight">
+              Featured Categories
+            </h2>
+            <span className="hidden sm:inline text-xs text-[#777777] font-medium">
+              ({allCategories.length} Departments)
+            </span>
+          </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
-          {featuredCategories.map((category, index) => (
-            <Reveal
-              key={category.id}
-              variant="fade-up"
-              delay={index * 50}
-            >
-              <Link
-                to={`/products?category=${category.slug}`}
-                className="group flex flex-col bg-brandBg rounded-xl border border-brandBorder overflow-hidden transition-all duration-300 hover:shadow-md hover:border-brandBorder-strong hover:-translate-y-1 h-full"
-              >
-                {/* Category Image */}
-                <div className="relative aspect-[4/3] sm:h-52 w-full overflow-hidden bg-slate-100">
-                  <ImageWithFallback
-                    src={category.image}
-                    alt={category.name}
-                    category={category.slug}
-                    title={category.name}
-                    aspectRatio="video"
-                    containerClassName="w-full h-full group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {category.productCount !== null && category.productCount !== undefined && (
-                    <span className="absolute top-2 right-2 sm:top-3 sm:right-3 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-navy/85 backdrop-blur-sm text-white text-[10px] sm:text-xs font-semibold">
-                      {category.productCount}+ <span className="hidden sm:inline">Items</span>
-                    </span>
-                  )}
-                </div>
+          <Link
+            to="/categories"
+            className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-[#F58220] hover:text-[#E97516] transition-colors group"
+          >
+            <span>See All</span>
+            <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        </div>
 
-                {/* Content */}
-                <div className="p-3 sm:p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xs sm:text-xl font-bold text-navy group-hover:text-brandRed transition-colors truncate sm:whitespace-normal">
-                      {category.name}
-                    </h3>
-                    <p className="hidden sm:block mt-2 text-xs sm:text-sm text-brandText-muted leading-relaxed line-clamp-2">
-                      {category.description}
-                    </p>
+        {/* Categories Browsing Grid / Horizontal Touch Scroll on Mobile */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0 py-1">
+          {allCategories.map((category, index) => {
+            const Icon = (category.iconName && ICON_MAP[category.iconName]) || Box;
+
+            return (
+              <Reveal key={category.id} variant="fade-up" delay={index * 30}>
+                <Link
+                  to={`/products?category=${category.slug}`}
+                  className="group flex flex-col items-center justify-center p-3 sm:p-4 rounded-[16px] bg-[#F8F8F9] hover:bg-white border border-[#EEEEF0] hover:border-[#DCDCDE] hover:shadow-soft-sm transition-all duration-[180ms] text-center min-w-[100px] sm:min-w-0"
+                >
+                  {/* Circular Illustration / Thumbnail */}
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border border-[#EEEEF0] shadow-2xs flex items-center justify-center mb-2.5 overflow-hidden group-hover:border-[#F58220] group-hover:scale-105 transition-all duration-[180ms] shrink-0 p-1.5">
+                    {category.image ? (
+                      <img
+                        src={category.image}
+                        alt={category.name}
+                        className="w-full h-full object-contain rounded-full"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).style.display = 'none';
+                          const fallback = (e.currentTarget.parentElement?.querySelector('.cat-icon-fallback') as HTMLElement);
+                          if (fallback) fallback.style.display = 'block';
+                        }}
+                      />
+                    ) : null}
+                    <Icon className={`w-6 h-6 text-[#F58220] cat-icon-fallback ${category.image ? 'hidden' : 'block'}`} />
                   </div>
 
-                  <div className="mt-2 sm:mt-4 pt-2 sm:pt-3.5 border-t border-brandBorder/60 flex items-center justify-between text-[11px] sm:text-sm font-bold text-navy group-hover:text-brandRed transition-colors">
-                    <span className="hidden sm:inline">View Category</span>
-                    <span className="sm:hidden text-brandRed font-semibold">Explore</span>
-                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transform group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            </Reveal>
-          ))}
+                  {/* Category Label */}
+                  <span className="text-[12px] sm:text-[13px] font-semibold text-[#171717] group-hover:text-[#F58220] transition-colors leading-tight truncate w-full">
+                    {category.name}
+                  </span>
+
+                  {/* Item count */}
+                  <span className="text-[10px] text-[#777777] mt-0.5 font-medium">
+                    {category.productCount ? `${category.productCount}+ items` : 'Browse'}
+                  </span>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </Container>
     </section>

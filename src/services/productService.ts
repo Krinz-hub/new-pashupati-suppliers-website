@@ -26,9 +26,15 @@ export const productService = {
     }
 
     const query = params.toString() ? `?${params.toString()}` : '';
-    const { data, error } = await apiClient.request<{ products: Product[] }>(`/api/products${query}`);
+    const { data, error } = await apiClient.request<any>(`/api/products${query}`);
 
-    if (error || !data || !Array.isArray(data.products)) {
+    const rawList: Product[] | null = Array.isArray(data?.products)
+      ? data.products
+      : Array.isArray(data?.data)
+      ? data.data
+      : null;
+
+    if (error || !rawList) {
       // Apply filters on fallback data only on network error
       let filtered = [...DEFAULT_PRODUCTS];
       if (filters.category && filters.category !== 'all') {
@@ -49,18 +55,19 @@ export const productService = {
       return filtered;
     }
 
-    return data.products;
+    return rawList;
   },
 
   async getProduct(idOrSlug: string): Promise<Product | null> {
-    const { data, error } = await apiClient.request<{ product: Product }>(`/api/products/${idOrSlug}`);
-    if (error || !data?.product) {
+    const { data, error } = await apiClient.request<any>(`/api/products/${idOrSlug}`);
+    const product: Product | null = data?.product || data?.data || null;
+    if (error || !product) {
       const fallback = DEFAULT_PRODUCTS.find(
         (p) => p.id === idOrSlug || p.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') === idOrSlug
       );
       return fallback || null;
     }
-    return data.product;
+    return product;
   },
 
   async createProduct(formData: ProductFormData): Promise<{ success: boolean; id?: string; error?: string }> {

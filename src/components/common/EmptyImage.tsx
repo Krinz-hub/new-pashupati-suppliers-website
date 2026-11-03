@@ -53,33 +53,25 @@ export const EmptyImage: React.FC<EmptyImageProps> = ({
   return (
     <div
       className={cn(
-        'relative w-full overflow-hidden flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 via-slate-50 to-slate-200 border border-brandBorder/60 select-none p-4',
+        'relative w-full overflow-hidden flex flex-col items-center justify-center bg-white border border-[#EEEEF0] select-none p-4',
         aspectClasses[aspectRatio],
         className
       )}
     >
-      {/* Subtle background geometric pattern */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[radial-gradient(#0B1F3A_1px,transparent_1px)] [background-size:16px_16px]" />
-
       <div className="relative z-10 flex flex-col items-center text-center">
-        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white shadow-soft-sm border border-brandBorder flex items-center justify-center text-navy mb-2.5 transition-transform duration-200">
-          <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 text-brandRed" strokeWidth={1.75} />
+        <div className="w-14 h-14 rounded-full bg-[#F8F8F9] border border-[#EEEEF0] flex items-center justify-center text-[#777777] mb-2 shadow-2xs">
+          <IconComponent className="w-7 h-7 text-[#F58220]" strokeWidth={1.5} />
         </div>
 
         {title && (
-          <span className="text-xs sm:text-sm font-bold text-navy/80 line-clamp-1 max-w-[200px]">
+          <span className="text-xs font-semibold text-[#171717] line-clamp-1 max-w-[180px]">
             {title}
           </span>
         )}
 
-        <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-brandText-muted/80 mt-1">
-          {category ? `${category} Supply` : 'Pashupati Quality'}
+        <span className="text-[10px] font-medium uppercase tracking-wider text-[#777777] mt-0.5">
+          {category ? `${category} Product` : 'Product Image'}
         </span>
-      </div>
-
-      {/* Small subtle brand mark watermark */}
-      <div className="absolute bottom-2 right-2.5 text-[9px] font-bold text-navy/20 uppercase tracking-widest pointer-events-none">
-        NPS
       </div>
     </div>
   );

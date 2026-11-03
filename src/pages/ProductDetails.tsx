@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { MessageSquare, Send, CheckCircle } from 'lucide-react';
+import { MessageSquare, Send, CheckCircle, ShieldCheck, Truck } from 'lucide-react';
 import { Container } from '../components/common/Container';
-import { ProductCard } from '../components/products/ProductCard';
+import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { ProductGrid } from '../components/products/ProductGrid';
 import { fetchProductBySlug, fetchProducts, ProductItem } from '../services/api';
 import { SITE } from '../config/site';
 
@@ -33,9 +34,9 @@ export const ProductDetails: React.FC = () => {
 
   if (loading) {
     return (
-      <main className="pt-24 pb-16 bg-slate-50 min-h-screen">
+      <main className="py-12 bg-white min-h-screen">
         <Container>
-          <div className="max-w-5xl mx-auto h-96 bg-slate-200 animate-pulse rounded-3xl" />
+          <div className="max-w-4xl mx-auto h-96 bg-[#F8F8F9] animate-pulse rounded-[16px]" />
         </Container>
       </main>
     );
@@ -43,12 +44,12 @@ export const ProductDetails: React.FC = () => {
 
   if (!product) {
     return (
-      <main className="pt-24 pb-16 bg-slate-50 min-h-screen text-center">
+      <main className="py-16 bg-white min-h-screen text-center">
         <Container>
-          <div className="max-w-md mx-auto bg-white p-8 rounded-3xl border border-slate-200">
-            <h2 className="text-xl font-bold text-navy mb-2">Product Not Found</h2>
-            <p className="text-slate-500 text-sm mb-6">The requested product could not be located in our catalog.</p>
-            <Link to="/products" className="inline-block px-5 py-2.5 bg-brandRed text-white font-semibold rounded-xl">
+          <div className="max-w-md mx-auto bg-white p-8 rounded-[16px] border border-[#EEEEF0] shadow-xs">
+            <h2 className="text-xl font-bold text-[#09132F] mb-2">Product Not Found</h2>
+            <p className="text-[#777777] text-sm mb-6">The requested product could not be located in our catalog.</p>
+            <Link to="/products" className="inline-block px-5 py-2.5 bg-[#F58220] hover:bg-[#E97516] text-white font-semibold rounded-full text-sm">
               Back to Catalog
             </Link>
           </div>
@@ -62,56 +63,53 @@ export const ProductDetails: React.FC = () => {
   )}`;
 
   const imagesList = product.images && product.images.length > 0 ? product.images : [product.image];
+  const priceDisplay = product.price ? `रू ${product.price}` : 'Wholesale Quote Available';
 
   return (
-    <main className="pt-24 pb-16 bg-slate-50 min-h-screen">
+    <main className="py-6 sm:py-10 bg-white min-h-screen">
       <Container>
-        {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-6">
-          <Link to="/" className="hover:text-brandRed">Home</Link>
-          <span>/</span>
-          <Link to="/products" className="hover:text-brandRed">Products</Link>
-          <span>/</span>
-          <Link to={`/categories/${product.category.toLowerCase()}`} className="hover:text-brandRed capitalize">
-            {product.category}
-          </Link>
-          <span>/</span>
-          <span className="text-navy truncate max-w-[200px]">{product.name}</span>
-        </nav>
+        {/* Unified Breadcrumb Navigation */}
+        <Breadcrumbs
+          items={[
+            { label: 'Products', path: '/products' },
+            { label: product.category, path: `/products?category=${product.category.toLowerCase()}` },
+            { label: product.name },
+          ]}
+        />
 
         {/* Main Product Showcase Card */}
-        <div className="bg-white rounded-3xl p-6 sm:p-10 mb-12 shadow-sm border border-slate-200/80">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="bg-white rounded-[16px] p-5 sm:p-8 mb-10 border border-[#EEEEF0] shadow-soft-xs">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             {/* Gallery Column */}
-            <div className="lg:col-span-6 space-y-4">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 relative group">
+            <div className="lg:col-span-6 space-y-3">
+              <div className="aspect-square rounded-[16px] overflow-hidden bg-white border border-[#EEEEF0] relative flex items-center justify-center p-6">
                 <img
                   src={selectedImage || product.image}
                   alt={product.name}
-                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).src = '/assets/banner.png';
                   }}
                 />
                 {product.available && (
-                  <span className="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
-                    <CheckCircle className="w-3.5 h-3.5" />
-                    In Stock
+                  <span className="absolute top-3 left-3 bg-[#13984B] text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-xs flex items-center gap-1">
+                    <CheckCircle className="w-3 h-3" />
+                    Available in Stock
                   </span>
                 )}
               </div>
 
               {imagesList.length > 1 && (
-                <div className="flex items-center gap-3 overflow-x-auto pb-2">
+                <div className="flex items-center gap-2.5 overflow-x-auto pb-1">
                   {imagesList.map((imgUrl, idx) => (
                     <button
                       key={idx}
                       onClick={() => setSelectedImage(imgUrl)}
-                      className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all shrink-0 bg-slate-50 ${
-                        selectedImage === imgUrl ? 'border-brandRed scale-95' : 'border-slate-200 hover:border-slate-300'
+                      className={`w-16 h-16 rounded-[12px] overflow-hidden border transition-all shrink-0 bg-white p-1.5 ${
+                        selectedImage === imgUrl ? 'border-[#F58220] ring-1 ring-[#F58220]' : 'border-[#EEEEF0] hover:border-slate-300'
                       }`}
                     >
-                      <img src={imgUrl} alt="" className="w-full h-full object-contain p-1" />
+                      <img src={imgUrl} alt="" className="w-full h-full object-contain" />
                     </button>
                   ))}
                 </div>
@@ -121,85 +119,111 @@ export const ProductDetails: React.FC = () => {
             {/* Product Details Column */}
             <div className="lg:col-span-6 flex flex-col justify-between h-full">
               <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full uppercase tracking-wider">
+                <div className="flex items-center gap-2 mb-2.5">
+                  <span className="px-2.5 py-0.5 bg-[#F8F8F9] text-[#09132F] text-[11px] font-bold rounded-full uppercase tracking-wider border border-[#EEEEF0]">
                     {product.category}
                   </span>
                   {product.brand && (
-                    <span className="text-xs font-medium text-slate-400">Brand: {product.brand}</span>
+                    <span className="text-xs font-medium text-[#777777]">Brand: <strong className="text-[#09132F]">{product.brand}</strong></span>
                   )}
                 </div>
 
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-navy leading-tight mb-4">
+                <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[#09132F] leading-tight mb-3">
                   {product.name}
                 </h1>
 
-                <p className="text-slate-600 text-base leading-relaxed mb-6">
+                {/* Price Display */}
+                <div className="p-3.5 rounded-[12px] bg-[#FFF4EB] border border-[#F58220]/20 mb-4 inline-block">
+                  <span className="text-[11px] uppercase tracking-wider text-[#777777] font-semibold block mb-0.5">
+                    Pricing &amp; Procurement
+                  </span>
+                  <span className="text-xl sm:text-2xl font-black text-[#F58220]">
+                    {priceDisplay}
+                  </span>
+                  <p className="text-[11px] text-[#777777] mt-1">
+                    Wholesale volume tiers available for shops and bulk procurement.
+                  </p>
+                </div>
+
+                <p className="text-[#777777] text-xs sm:text-sm leading-relaxed mb-5">
                   {product.description}
                 </p>
 
                 {/* Specs Table */}
-                <div className="bg-slate-50 rounded-2xl p-4 sm:p-5 border border-slate-200/80 mb-6 space-y-2.5 text-xs sm:text-sm">
+                <div className="bg-[#F8F8F9] rounded-[14px] p-4 border border-[#EEEEF0] mb-5 space-y-2 text-xs">
                   {product.sku && (
-                    <div className="flex items-center justify-between py-1 border-b border-slate-200/60">
-                      <span className="text-slate-500 font-medium">SKU Reference:</span>
-                      <span className="font-bold text-navy">{product.sku}</span>
+                    <div className="flex items-center justify-between py-1 border-b border-[#EEEEF0]">
+                      <span className="text-[#777777] font-medium">SKU Reference:</span>
+                      <span className="font-bold text-[#09132F]">{product.sku}</span>
                     </div>
                   )}
                   {product.unit && (
-                    <div className="flex items-center justify-between py-1 border-b border-slate-200/60">
-                      <span className="text-slate-500 font-medium">Supply Unit:</span>
-                      <span className="font-bold text-navy">{product.unit}</span>
+                    <div className="flex items-center justify-between py-1 border-b border-[#EEEEF0]">
+                      <span className="text-[#777777] font-medium">Supply Unit:</span>
+                      <span className="font-bold text-[#09132F]">{product.unit}</span>
                     </div>
                   )}
                   {product.packSize && (
                     <div className="flex items-center justify-between py-1">
-                      <span className="text-slate-500 font-medium">Wholesale Pack Size:</span>
-                      <span className="font-bold text-navy">{product.packSize}</span>
+                      <span className="text-[#777777] font-medium">Wholesale Pack Size:</span>
+                      <span className="font-bold text-[#09132F]">{product.packSize}</span>
                     </div>
                   )}
                 </div>
               </div>
 
               {/* Action CTAs */}
-              <div className="space-y-3 pt-4 border-t border-slate-100">
+              <div className="space-y-3 pt-3 border-t border-[#EEEEF0]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <button
                     onClick={() => navigate(`/contact?product=${encodeURIComponent(product.name)}`)}
-                    className="w-full flex items-center justify-center gap-2 py-3.5 px-5 bg-brandRed text-white font-bold rounded-xl hover:bg-brandRed/90 active:scale-[0.98] transition-all shadow-md shadow-brandRed/20"
+                    className="w-full flex items-center justify-center gap-2 py-3 px-5 bg-[#F58220] hover:bg-[#E97516] text-white font-bold rounded-full text-xs sm:text-sm shadow-xs transition-colors"
                   >
                     <Send className="w-4 h-4" />
-                    <span>Ask About Product</span>
+                    <span>Inquire Best Price</span>
                   </button>
 
                   <a
                     href={whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-3.5 px-5 bg-[#25D366] text-white font-bold rounded-xl hover:bg-[#20bd5a] active:scale-[0.98] transition-all shadow-md shadow-emerald-500/20"
+                    className="w-full flex items-center justify-center gap-2 py-3 px-5 bg-[#13984B] hover:bg-[#0f7a3b] text-white font-bold rounded-full text-xs sm:text-sm shadow-xs transition-colors"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>WhatsApp Inquiry</span>
                   </a>
                 </div>
 
-                <p className="text-center text-xs text-slate-400 font-medium pt-1">
-                  📍 Available at Hetauda Showroom & Wholesale Dispatch across Makawanpur
-                </p>
+                <div className="flex items-center justify-center gap-4 text-xs text-[#777777] pt-2">
+                  <span className="inline-flex items-center gap-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#13984B]" />
+                    Genuine Quality Assured
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <Truck className="w-3.5 h-3.5 text-[#F58220]" />
+                    Makawanpur &amp; Nepal Dispatch
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Related Products */}
+        {/* Unified Related Products Grid */}
         {relatedProducts.length > 0 && (
-          <div>
-            <h2 className="text-xl font-bold text-navy mb-6">Related Products in {product.category}</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {relatedProducts.map((rel) => (
-                <ProductCard key={rel._id || rel.id || rel.slug} product={{ ...rel, id: rel.id || rel.slug || rel._id || 'rel' }} />
-              ))}
+          <div className="pt-6 border-t border-[#EEEEF0]">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-base sm:text-xl font-bold text-[#09132F]">
+                Related Products in {product.category}
+              </h2>
+              <Link
+                to={`/products?category=${product.category.toLowerCase()}`}
+                className="text-xs font-semibold text-[#F58220] hover:text-[#E97516]"
+              >
+                View Category
+              </Link>
             </div>
+            <ProductGrid products={relatedProducts} />
           </div>
         )}
       </Container>
